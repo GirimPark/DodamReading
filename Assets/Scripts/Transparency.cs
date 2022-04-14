@@ -3,25 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MouseEvent : MonoBehaviour
+public class Transparency : MonoBehaviour
 {
     Image this_img;//현재 이미지
-    public Sprite change_img;//바꿀 이미지
 
     Vector2 startPos, deltaPos, nowPos;
     bool isDragged;
     const float dragAccuracy = 50f;
     //드래그 횟수 세주기
     int dragN=0;
-
-    [SerializeField] Slider slider = null;
  
  void Start(){
      //기본 이미지
      this_img=GetComponent<Image>();
-     //프로그레스바 진행 상황
-     //SetFillAmount(0);
-     slider.value = 0;
  }
  void Update()
     {
@@ -56,13 +50,20 @@ public class MouseEvent : MonoBehaviour
             dragN++;
             Debug.Log("드래그 횟수:"+dragN);
         }
-        //드래그 횟수 500 넘으면 이미지 바꿔주기
-        if (dragN<500){
-            slider.value = (dragN/5);
+        //이미지 투명도 조절
+        GameObject goImg = GameObject.Find("Canvas/princess1");
+        Color color = goImg.GetComponent<Image>().color;
+        if(0<=dragN && dragN<100){
+            color.a=1.0f;
+        }else if(100<=dragN && dragN<200){
+            color.a=0.8f;
+        }else if(200<=dragN && dragN<300){
+            color.a=0.6f;
+        }else if(300<=dragN && dragN<400){
+            color.a = 0.4f;
+        }else{
+            color.a = 0.2f;
         }
-        else if(dragN>500){
-            this_img.sprite=change_img;
-            slider.value = 100;
-        }
+        goImg.GetComponent<Image>().color = color;
     }
 }
