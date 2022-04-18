@@ -399,6 +399,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  closeDistance: 0
 --- !u!1 &933053421
 GameObject:
   m_ObjectHideFlags: 0
@@ -697,6 +698,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isArriveTrue: 0
+  princeArriveTrue: 0
   isWithPrince: 0
   distance: 0
   arrivePosition: {fileID: 963589523}
@@ -706,6 +708,7 @@ MonoBehaviour:
   princePosition: {fileID: 367627077}
   princePos: {x: 0, y: 0}
   distanceP: 0
+  mousePosition: {x: 0, y: 0}
 --- !u!1 &1077391874
 GameObject:
   m_ObjectHideFlags: 0
