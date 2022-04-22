@@ -62,7 +62,7 @@ public class Transparency : MonoBehaviour
         }else if(300<=dragN && dragN<400){
             color.a = 0.4f;
         }else{
-            color.a = 0.2f;
+            color.a = 0f;
         }
         goImg.GetComponent<Image>().color = color;
     }

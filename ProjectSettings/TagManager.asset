@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - TimeLine
+  - positive
+  - negative
+  - princess1
+  - princess2
+  - princess3
   layers:
   - Default
   - TransparentFX
