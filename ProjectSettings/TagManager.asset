@@ -10,6 +10,18 @@ TagManager:
   - princess1
   - princess2
   - princess3
+  - choice1
+  - choice2
+  - choice3
+  - choice4
+  - fill1
+  - fill2
+  - fill3
+  - fill4
+  - 0
+  - 1
+  - 2
+  - 3
   layers:
   - Default
   - TransparentFX
