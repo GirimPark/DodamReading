@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/FairyStoryScene.unity
+    guid: 5fa498297a7ff4ba2afb390a36a57632
+  - enabled: 1
+    path: Assets/Scenes/ClosetScene.unity
+    guid: 6f0156f964a35a34bb34eb9081fbe236
   m_configObjects: {}

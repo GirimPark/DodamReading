@@ -1,7 +1,43 @@
 fileFormatVersion: 2
 guid: e9ef7b01cf5414aaf891dba22e5c4d5c
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -3312385960692632451
+    second: block1
+  - first:
+      213: 943141315357941535
+    second: flag1
+  - first:
+      213: 3683992883249686686
+    second: flag2
+  - first:
+      213: -2826813697077302599
+    second: net1
+  - first:
+      213: 8443042901604311707
+    second: net2
+  - first:
+      213: -7313165381593552851
+    second: block3
+  - first:
+      213: 4974384041221008376
+    second: block2
+  - first:
+      213: 1233253304607586847
+    second: block4
+  - first:
+      213: 8010137703158902230
+    second: block5
+  - first:
+      213: 3807721846809188231
+    second: block6
+  - first:
+      213: -626387027882864393
+    second: hope1
+  - first:
+      213: -8678885266852778790
+    second: ll
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -75,9 +111,273 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: block1
+      rect:
+        serializedVersion: 2
+        x: 1680
+        y: 3360
+        width: 553
+        height: 1977
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d74bcedb48a0802d0800000000000000
+      internalID: -3312385960692632451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flag1
+      rect:
+        serializedVersion: 2
+        x: 2349
+        y: 3099
+        width: 1250
+        height: 552
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1f97e28706b61d00800000000000000
+      internalID: 943141315357941535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flag2
+      rect:
+        serializedVersion: 2
+        x: 3657
+        y: 5482
+        width: 523
+        height: 1250
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5232559}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e982a29320c202330800000000000000
+      internalID: 3683992883249686686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: net1
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 3244
+        width: 1512
+        height: 640
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9baaf7b6be325c8d0800000000000000
+      internalID: -2826813697077302599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: net2
+      rect:
+        serializedVersion: 2
+        x: 5488
+        y: 4988
+        width: 1686
+        height: 553
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b92228d29c6bb2570800000000000000
+      internalID: 8443042901604311707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: block3
+      rect:
+        serializedVersion: 2
+        x: 5721
+        y: 3360
+        width: 1657
+        height: 466
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d28ae6e05da628a90800000000000000
+      internalID: -7313165381593552851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: block2
+      rect:
+        serializedVersion: 2
+        x: 3599
+        y: 2110
+        width: 291
+        height: 1570
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fba9591eef880540800000000000000
+      internalID: 4974384041221008376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: block4
+      rect:
+        serializedVersion: 2
+        x: 1651
+        y: 105
+        width: 582
+        height: 1860
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1a3633b8556d1110800000000000000
+      internalID: 1233253304607586847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: block5
+      rect:
+        serializedVersion: 2
+        x: 5634
+        y: 1674
+        width: 1628
+        height: 553
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ddefbe2dc9b92f60800000000000000
+      internalID: 8010137703158902230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: block6
+      rect:
+        serializedVersion: 2
+        x: 7029
+        y: 2169
+        width: 407
+        height: 1046
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7875e8278deb7d430800000000000000
+      internalID: 3807721846809188231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hope1
+      rect:
+        serializedVersion: 2
+        x: 2320
+        y: 134
+        width: 1889
+        height: 465
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f0112f1150ae47f0800000000000000
+      internalID: -626387027882864393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ll
+      rect:
+        serializedVersion: 2
+        x: 4326
+        y: 105
+        width: 3023
+        height: 2035
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adc6ede15d76e8780800000000000000
+      internalID: -8678885266852778790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
