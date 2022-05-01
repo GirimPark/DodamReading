@@ -5,12 +5,30 @@ using UnityEngine;
 public class ChangeCursor : MonoBehaviour
 {
     [SerializeField] Texture2D cursorImg;
+    [SerializeField] Texture2D cursorImg2;
+    int clickN;//마우스 클릭 횟수
     void Start()
     {
         //커서 이미지 크기 조정
-        cursorImg = ScaleTexture(cursorImg, 400, 500);
+        cursorImg = ScaleTexture(cursorImg, 200, 200);
         //커서를 화면에 표시한다
         Cursor.SetCursor(cursorImg, Vector2.zero, CursorMode.ForceSoftware);
+    }
+    void Update(){
+        if(Input.GetMouseButtonDown(0)){//마우스 클릭시
+            clickN++;
+            if(clickN%2==0){
+            //커서 이미지 크기 조정
+            cursorImg2 = ScaleTexture(cursorImg2, 200, 200);
+            //커서를 화면에 표시한다
+            Cursor.SetCursor(cursorImg2, Vector2.zero, CursorMode.ForceSoftware);
+            }else{
+                //커서 이미지 크기 조정
+                cursorImg = ScaleTexture(cursorImg, 200, 200);
+                //커서를 화면에 표시한다
+                Cursor.SetCursor(cursorImg, Vector2.zero, CursorMode.ForceSoftware);
+            }
+        }   
     }
     //커서 이미지 크기 조정 함수
     Texture2D ScaleTexture(Texture2D source, int targetWidth, int targetHeight)

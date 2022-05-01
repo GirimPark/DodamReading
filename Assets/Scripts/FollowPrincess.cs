@@ -25,20 +25,23 @@ public class FollowPrincess : MonoBehaviour
             closeDistance = true;
         }*/
         //if(closeDistance==true){
-        if(Mathf.Abs(transform.position.x- player.position.x)>1){
+        if(Mathf.Abs(transform.position.x- player.position.x)<1 && Mathf.Abs(transform.position.y- player.position.y)<2){
             closeDistance = true;
             //왕자 움직임 줌
-            transform.Translate(new Vector2(-1,0)*Time.deltaTime*speed);
+            /*transform.Translate(new Vector2(-1,0)*Time.deltaTime*speed);
             if(transform.position.y>player.position.y){
                 transform.position += new Vector3(0, -1.0f, 0);//아래로 움직이기
             }else{
                 transform.position += new Vector3(0, 1.0f, 0);//위로 움직이기
-            }
+            }*/
             DirectionPrince();
         }
         if(princeArrive==true){//도착지 도착했으면 멈추기
             speed=0;
             transform.position = new Vector3(5, 3, 0);
+        }
+        if(closeDistance==true){
+            transform.position = new Vector3(player.position.x-1, player.position.y, 0);
         }
     }
     void DirectionPrince(){
