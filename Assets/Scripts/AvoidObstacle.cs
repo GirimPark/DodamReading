@@ -29,6 +29,24 @@ public class AvoidObstacle : MonoBehaviour
     }
     void Update()
     {
+        /*손가락 터치
+        if(Input.touchCount>0){
+            Touch touch = Input.GetTouch(0);
+            switch (touch.phase)
+            {
+                case TouchPhase.Began://터치 시작했을 때
+                    break;
+                case TouchPhase.Moved://터치한 상태에서 운직였을 때
+                    break;
+                case TouchPhase.Stationary://움직이다가 가만히 있을 때
+                    break;
+                case TouchPhase.Ended://화면에서 손 뗐을 때
+                    break;
+                case TouchPhase.Canceled://시스템에 의해 터치 취소됐을 때
+                    break;
+            }
+        }
+        */
         isWithPrince = GameObject.Find("prince").GetComponent<FollowPrincess>().closeDistance;//왕자랑 같이 있는지 받아오기
         //도착지&공주 위치 업데이트
         arrivePos = arrivePosition.transform.position;
