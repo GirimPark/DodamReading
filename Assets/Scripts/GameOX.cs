@@ -1,51 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameOX : MonoBehaviour
 {
-    Vector2 carPos, lovePos, newCarPos, newlovePos;
-    bool isDrag, carPosTF, lovePosTF;
+    GameObject positive1, positive2, negative;//기존 이미지
+    public Sprite change_img;
     // Start is called before the first frame update
     void Start()
     {
-        isDrag = false;
-        carPosTF = false;
-        lovePosTF = false;
-        carPos =  transform.position;//자동차 시작위치
-        lovePos = transform.position;//사랑 시작위치
+        positive1 = GameObject.Find("positive1");
+        negative = GameObject.Find("negative");
+        positive2 = GameObject.Find("positive2");
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (gameObject.CompareTag("negative") ){//부정단어
-            newCarPos = transform.position;
-            if(isDrag==true&&transform.position.x>-3.5&&transform.position.x<-1.5&&transform.position.y>-0.5&&transform.position.y<2.0)
-            {
-                transform.position = new Vector2(-3,1);
-                carPosTF = true;
+   void Update(){
+       if(Input.GetMouseButtonDown(0)){//마우스 클릭시
+            Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            RaycastHit2D hit = Physics2D.Raycast(pos, Camera.main.transform.forward);
+            if(hit.collider!=null){//클릭한 오브젝트 이름 가져옴
+                GameObject click_obj = hit.transform.gameObject;
+                Debug.Log(click_obj.name);
+                if(click_obj.name=="negative"){//공주3 클릭했을 때
+                    negative.GetComponent<Image>().sprite = change_img;//이미지 변경
+                }
             }
-            //Debug.Log(transform.position);
-        }
-        else if(gameObject.CompareTag("positive")){//긍정단어
-            newlovePos = transform.position;
-            if(isDrag==true&&transform.position.x>1.8&&transform.position.x<4.5&&transform.position.y>-0.5&&transform.position.y<2.0)
-            {
-                transform.position = new Vector2(3,1);
-                lovePosTF = true;
-            }
-        }
-    }
-
-    void OnMouseDrag() 
-    {
-        if (carPosTF==true || lovePosTF==true) return;
-
-        Vector2 mousePosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
-        Vector2 objPosition = Camera.main.ScreenToWorldPoint(mousePosition);
-        transform.position = objPosition;
-
-        isDrag = true; 
-    }
+        } 
+   }
 }
