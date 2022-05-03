@@ -316,7 +316,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1e58f8d2c9cea42ba9760980cf7cea19, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b011011a0b1a94e4bbfe4afb685e54c4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -513,7 +513,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 3b1b3cb8e40f040d5aa356baf530dd2b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 348fc5cf53b5043798897878bfa6a8c0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -977,7 +977,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 1f170268f389e43038d1bc65e73e4668, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 471a41cf45122414a888d45c649d6011, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1196,7 +1196,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 94c9d7c28623b034bbec9477a4432565, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 85f06247fc2734f0381aba166ccf2836, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1397,7 +1397,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 1e5aea343fe364b239381c86dfbbb0db, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7e5c1c88a97e34969b17b167711b962f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1543,8 +1543,8 @@ MonoBehaviour:
   cloth2: {fileID: 404836831}
   cloth3: {fileID: 1000506318}
   cloth4: {fileID: 1194412343}
-  change_img1: {fileID: 21300000, guid: 1e5aea343fe364b239381c86dfbbb0db, type: 3}
-  change_img2: {fileID: 21300000, guid: 3b1b3cb8e40f040d5aa356baf530dd2b, type: 3}
-  change_img3: {fileID: 21300000, guid: 1f170268f389e43038d1bc65e73e4668, type: 3}
-  change_img4: {fileID: 21300000, guid: 94c9d7c28623b034bbec9477a4432565, type: 3}
-  player_img: {fileID: 21300000, guid: 1e58f8d2c9cea42ba9760980cf7cea19, type: 3}
+  change_img1: {fileID: 21300000, guid: 7e5c1c88a97e34969b17b167711b962f, type: 3}
+  change_img2: {fileID: 21300000, guid: 348fc5cf53b5043798897878bfa6a8c0, type: 3}
+  change_img3: {fileID: 21300000, guid: 471a41cf45122414a888d45c649d6011, type: 3}
+  change_img4: {fileID: 21300000, guid: 85f06247fc2734f0381aba166ccf2836, type: 3}
+  player_img: {fileID: 21300000, guid: b011011a0b1a94e4bbfe4afb685e54c4, type: 3}
