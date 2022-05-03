@@ -8,7 +8,9 @@ public class WritingReport_RayCast : MonoBehaviour
     int num = 0;
     public int maxNum = 1; // 2문장 기준
     string hittedTag;
+    bool hitted = false;
     GameObject curParent;
+    RaycastHit2D hit;
 
     Vector3 MousePosition;
     Camera cam;
@@ -34,17 +36,15 @@ public class WritingReport_RayCast : MonoBehaviour
             MousePosition = Input.mousePosition;    // todo : 터치 버전 추가해야함
             MousePosition = cam.ScreenToWorldPoint(MousePosition);
 
-            RaycastHit2D hit = Physics2D.Raycast(MousePosition, transform.forward, distance);
+            hit = Physics2D.Raycast(MousePosition, transform.forward, distance);
+            
             Debug.DrawRay(MousePosition, transform.forward * 500, Color.red, 0.3f);
-            if (hit)
-            {
-                Ray(hit, ref num);
-            }
+            StartCoroutine("RayDelay");
         }
     }
 
 
-    void Ray(RaycastHit2D hit, ref int num)
+    void Ray(ref RaycastHit2D hit, ref int num)
     {
         hittedTag = hit.transform.gameObject.tag;
         //  부모tag > 빈칸텍스트=0 , 선택텍스트=1
@@ -62,11 +62,11 @@ public class WritingReport_RayCast : MonoBehaviour
         if (hittedTag.Equals("choice1"))
             curParent.transform.GetChild(0).gameObject.SetActive(true);  
         else if (hittedTag.Equals("choice2"))
-            curParent.transform.GetChild(0).gameObject.SetActive(true);
+            curParent.transform.GetChild(1).gameObject.SetActive(true);
         else if (hittedTag.Equals("choice3"))
-            curParent.transform.GetChild(0).gameObject.SetActive(true);
+            curParent.transform.GetChild(2).gameObject.SetActive(true);
         else
-            curParent.transform.GetChild(0).gameObject.SetActive(true);
+            curParent.transform.GetChild(3).gameObject.SetActive(true);
         Debug.Log("빈칸 text 활성화");
 
 
@@ -79,16 +79,16 @@ public class WritingReport_RayCast : MonoBehaviour
         Debug.Log("선택 text 비활성화");
         num++;
 
-        StartCoroutine(WaitForIt());
+        
         //  마지막 선택지라면
         if (num == maxNum)
         {
-            Ray(hit, ref num);
+            StartCoroutine("RayDelay");
             StartCoroutine("Rendering");
         }
-        else
+        else if(num < maxNum)
         {
-            Ray(hit, ref num);
+            StartCoroutine("RayDelay");
         }
     }
 
@@ -109,11 +109,11 @@ public class WritingReport_RayCast : MonoBehaviour
         System.IO.File.WriteAllBytes(path, imgBytes);
     }
 
-    IEnumerator WaitForIt()
+    IEnumerator RayDelay()
     {
-        yield return new WaitForSeconds(2.0f);
-        Debug.Log("2초 기다리기");
-        bool check = true;
+        yield return new WaitForSeconds(1.0f);
+        Debug.Log("1초 기다리기");
+        if(hit) Ray(ref hit, ref num);
     }
 
 }
