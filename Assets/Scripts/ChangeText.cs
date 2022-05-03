@@ -23,7 +23,7 @@ public class ChangeText : MonoBehaviour
         isWithPrince = GameObject.Find("princess").GetComponent<AvoidObstacle>().isWithPrince;
         isArriveTrue = GameObject.Find("princess").GetComponent<AvoidObstacle>().isArriveTrue;
 
-        if(isWithPrince ==  true && isArriveTrue == true){
+        if(isArriveTrue == true){
             textArrive.text = "다음 게임으로 넘어가겠습니다.";//텍스트 변경
             textArrive.color = Color.blue;//텍스트 색상 변경
         }else{

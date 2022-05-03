@@ -21,11 +21,15 @@ public class AvoidObstacle : MonoBehaviour
     public Vector2 princePos;//왕자 위치
     public float distanceP;
 
+    private Rigidbody2D rigid2D;
+
 
     void Start(){
         isArriveTrue = false;//도착 위치에 맞는지
         princeArriveTrue = false;//왕자 도착 위치에 맞는지
         startPos = transform.position;//공주 시작 위치 저장하기
+
+        rigid2D = GetComponent<Rigidbody2D>();
     }
     void Update()
     {
@@ -47,23 +51,31 @@ public class AvoidObstacle : MonoBehaviour
             }
         }
         */
-        isWithPrince = GameObject.Find("prince").GetComponent<FollowPrincess>().closeDistance;//왕자랑 같이 있는지 받아오기
+        isWithPrince = GameObject.Find("prince").GetComponent<FollowPrincess>().isWithPrince;//왕자랑 같이 있는지 받아오기
         //도착지&공주 위치 업데이트
         arrivePos = arrivePosition.transform.position;
         princessPos = transform.position;
+        Debug.Log(transform.position);
 
-        distance = Vector2.Distance(princessPos, arrivePos);
+        //distance = Vector2.Distance(princessPos, arrivePos);
 
         //왕자&공주 위치 업데이트
         princePos = princePosition.transform.position;
         distanceP = Vector2.Distance(princePos, princessPos);
 
-        if (isArriveTrue==false && distance<=0.5f && isWithPrince==true)//도착지 도착했을 때
+        //if (isArriveTrue==false && distance<=0.5f && isWithPrince==true)//도착지 도착했을 때
+        if (isArriveTrue==false && transform.position.x<6.0&&transform.position.x>4.5 && transform.position.y <3.5 &&transform.position.y>0.5 && isWithPrince==true)
         {
             transform.position = arrivePos;//공주 위치랑 도착지 위치 맞춰줌
             isArriveTrue = true;
             princeArriveTrue = true;
         }
+        Debug.Log(transform.position);
+
+        //마우스로 위치 조정
+        /*float x =Input.GetAxisRaw("Horizontal");
+        float y = Input.GetAxisRaw("Vertical");
+        rigid2D.velocity = new Vector3(x,y,0)*5.0f;*/
     }
 
     void OnMouseDrag() 
