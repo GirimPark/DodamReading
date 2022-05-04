@@ -41,12 +41,13 @@ public class WritingReport_RayCast : MonoBehaviour
             Debug.DrawRay(MousePosition, transform.forward * 500, Color.red, 0.3f);
             StartCoroutine("RayDelay");
         }
+
     }
 
 
     void Ray(ref RaycastHit2D hit, ref int num)
     {
-        hittedTag = hit.transform.gameObject.tag;
+        hittedTag = hit.collider.gameObject.tag;
         //  부모tag > 빈칸텍스트=0 , 선택텍스트=1
         //  선택 text 활성화
         curParent = GameObject.FindGameObjectsWithTag(num.ToString())[1];
@@ -56,7 +57,7 @@ public class WritingReport_RayCast : MonoBehaviour
         }
         Debug.Log("선택 text 활성화");
 
-
+        
         //  빈칸text 선택에 맞게 활성화
         curParent = GameObject.FindGameObjectsWithTag(num.ToString())[0];
         if (hittedTag.Equals("choice1"))
@@ -68,12 +69,13 @@ public class WritingReport_RayCast : MonoBehaviour
         else
             curParent.transform.GetChild(3).gameObject.SetActive(true);
         Debug.Log("빈칸 text 활성화");
-
+        
 
         //  선택text 비활성화
         curParent = GameObject.FindGameObjectsWithTag(num.ToString())[1];
         for (int i = 0; i < 4; i++)
         {
+            curParent.transform.GetChild(i).gameObject.GetComponent<BoxCollider2D>().enabled = false;
             curParent.transform.GetChild(i).gameObject.SetActive(false);
         }
         Debug.Log("선택 text 비활성화");
@@ -113,7 +115,10 @@ public class WritingReport_RayCast : MonoBehaviour
     {
         yield return new WaitForSeconds(1.0f);
         Debug.Log("1초 기다리기");
-        if(hit) Ray(ref hit, ref num);
+        if (hit)
+        {
+            Ray(ref hit, ref num);
+        }
     }
 
 }
