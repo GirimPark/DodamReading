@@ -1,6 +1,6 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WritingReport_RayCast : MonoBehaviour
 {
@@ -8,14 +8,21 @@ public class WritingReport_RayCast : MonoBehaviour
     int num = 0;
     public int maxNum = 1; // 2문장 기준
     string hittedTag;
-    bool hitted = false;
+    bool stext = false; //  선택text 활성화 여부
+    bool already = false;   //  선택text 활성화 한 번만 하도록
     GameObject curParent;
     RaycastHit2D hit;
+    string path;
 
     Vector3 MousePosition;
     Camera cam;
 
-    
+   public string getPath()
+    {
+        return path;
+    }
+
+
     void Start()
     {
         cam = GetComponent<Camera>();
@@ -25,12 +32,32 @@ public class WritingReport_RayCast : MonoBehaviour
         {
             curParent.transform.GetChild(i).gameObject.SetActive(true);
         }
+        stext = true;
         Debug.Log("선택 text 활성화");
     }
 
-    
+
+    //  부모tag > 유도텍스트=0, 빈칸텍스트=1, 선택텍스트=2
     void Update()
     {
+        //  유도text, 선택text 활성화
+        if (!stext && !already && num<=maxNum)
+        {
+            curParent = GameObject.Find("유도텍스트" + (num + 1).ToString());
+            curParent.transform.GetChild(0).gameObject.SetActive(true);
+            Debug.Log(curParent.name+" 활성화");
+
+            curParent = GameObject.FindGameObjectsWithTag(num.ToString())[1];
+            for (int i = 0; i < 4; i++)
+            {
+                curParent.transform.GetChild(i).gameObject.SetActive(true);
+            }
+            stext = true;
+            already = true;
+            Debug.Log("선택 text 활성화");
+        }
+
+        //  클릭시 ray() 실행
         if(Input.GetMouseButtonDown(0)) //   || Input.GetTouch(0).phase == TouchPhase.Began
         {
             MousePosition = Input.mousePosition;    // todo : 터치 버전 추가해야함
@@ -39,7 +66,17 @@ public class WritingReport_RayCast : MonoBehaviour
             hit = Physics2D.Raycast(MousePosition, transform.forward, distance);
             
             Debug.DrawRay(MousePosition, transform.forward * 500, Color.red, 0.3f);
-            StartCoroutine("RayDelay");
+            if (hit && num == maxNum)
+            {
+                Ray(ref hit, ref num);
+                StartCoroutine(Rendering());
+                StartCoroutine(LoadMyAsyncScene());
+            }
+            else if(hit && num < maxNum)
+            {
+                Ray(ref hit, ref num);
+                already = false;
+            }
         }
 
     }
@@ -48,16 +85,8 @@ public class WritingReport_RayCast : MonoBehaviour
     void Ray(ref RaycastHit2D hit, ref int num)
     {
         hittedTag = hit.collider.gameObject.tag;
-        //  부모tag > 빈칸텍스트=0 , 선택텍스트=1
-        //  선택 text 활성화
-        curParent = GameObject.FindGameObjectsWithTag(num.ToString())[1];
-        for (int i = 0; i < 4; i++)
-        {
-            curParent.transform.GetChild(i).gameObject.SetActive(true);
-        }
-        Debug.Log("선택 text 활성화");
-
         
+
         //  빈칸text 선택에 맞게 활성화
         curParent = GameObject.FindGameObjectsWithTag(num.ToString())[0];
         if (hittedTag.Equals("choice1"))
@@ -75,34 +104,22 @@ public class WritingReport_RayCast : MonoBehaviour
         curParent = GameObject.FindGameObjectsWithTag(num.ToString())[1];
         for (int i = 0; i < 4; i++)
         {
-            curParent.transform.GetChild(i).gameObject.GetComponent<BoxCollider2D>().enabled = false;
             curParent.transform.GetChild(i).gameObject.SetActive(false);
         }
+        stext = false;
         Debug.Log("선택 text 비활성화");
         num++;
-
-        
-        //  마지막 선택지라면
-        if (num == maxNum)
-        {
-            StartCoroutine("RayDelay");
-            StartCoroutine("Rendering");
-        }
-        else if(num < maxNum)
-        {
-            StartCoroutine("RayDelay");
-        }
     }
 
-
-    IEnumerator Rendering()
+    
+    IEnumerator Rendering() //  화면 캡쳐
     {
         yield return new WaitForEndOfFrame();
 
 
         byte[] imgBytes;
-        string path = @"C:\UnitySpace\Modori\Assets\Image\report.png";
-
+        path = @"C:\UnitySpace\Modori\Assets\Resources\Reports\" + System.DateTime.Now.ToString("yyMMdd HHmmss") + ".png";
+        
         Texture2D texture = new Texture2D(Screen.width, Screen.height, TextureFormat.RGB24, false);
         texture.ReadPixels(new Rect(0, 0, Screen.width, Screen.height), 0, 0, false);
         texture.Apply();
@@ -111,14 +128,17 @@ public class WritingReport_RayCast : MonoBehaviour
         System.IO.File.WriteAllBytes(path, imgBytes);
     }
 
-    IEnumerator RayDelay()
+    IEnumerator LoadMyAsyncScene()
     {
         yield return new WaitForSeconds(1.0f);
-        Debug.Log("1초 기다리기");
-        if (hit)
-        {
-            Ray(ref hit, ref num);
-        }
-    }
 
+
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("BookReportScene");
+        
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
+        }
+        
+    }
 }
