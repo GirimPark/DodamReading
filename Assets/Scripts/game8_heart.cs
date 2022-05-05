@@ -33,6 +33,11 @@ public class game8_heart : MonoBehaviour
             dalkac.Play();
             isPlay = true;
         }
+
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved)
+        {
+            OnMouseDrag();
+        }
     }
 
     void OnMouseDrag() 

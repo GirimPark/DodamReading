@@ -17,6 +17,11 @@ public class Game3_picturepuzzle : MonoBehaviour
     {
         if (transform.localPosition.y >= 250)
             body.velocity = Vector2.zero;
+
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+        {
+            OnMouseDown();
+        }
     }
 
 

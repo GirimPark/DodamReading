@@ -14,7 +14,7 @@ public class WritingReport_RayCast : MonoBehaviour
     RaycastHit2D hit;
     string path;
 
-    Vector3 MousePosition;
+    Vector3 position;
     Camera cam;
 
    public string getPath()
@@ -56,16 +56,18 @@ public class WritingReport_RayCast : MonoBehaviour
             already = true;
             Debug.Log("선택 text 활성화");
         }
-
+        
         //  클릭시 ray() 실행
-        if(Input.GetMouseButtonDown(0)) //   || Input.GetTouch(0).phase == TouchPhase.Began
+        if(Input.GetMouseButtonDown(0) 
+            || (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began))
         {
-            MousePosition = Input.mousePosition;    // todo : 터치 버전 추가해야함
-            MousePosition = cam.ScreenToWorldPoint(MousePosition);
+            if (Input.mousePosition != null) position = Input.mousePosition;
+            if (Input.GetTouch(0).position != null) position = Input.GetTouch(0).position;
+            position = cam.ScreenToWorldPoint(position);
 
-            hit = Physics2D.Raycast(MousePosition, transform.forward, distance);
+            hit = Physics2D.Raycast(position, transform.forward, distance);
             
-            Debug.DrawRay(MousePosition, transform.forward * 500, Color.red, 0.3f);
+            Debug.DrawRay(position, transform.forward * 500, Color.red, 0.3f);
             if (hit && num == maxNum)
             {
                 Ray(ref hit, ref num);
@@ -78,7 +80,6 @@ public class WritingReport_RayCast : MonoBehaviour
                 already = false;
             }
         }
-
     }
 
 
@@ -133,6 +134,7 @@ public class WritingReport_RayCast : MonoBehaviour
         yield return new WaitForSeconds(1.0f);
 
 
+        PlayerPrefs.SetString("path", path);
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("BookReportScene");
         
         while (!asyncLoad.isDone)

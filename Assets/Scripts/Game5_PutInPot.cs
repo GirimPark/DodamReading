@@ -45,6 +45,11 @@ public class Game5_PutInPot : MonoBehaviour
                 GetComponent<Game5_PutInPot>().enabled = false;
             }
         }
+
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved)
+        {
+            OnMouseDrag();
+        }
     }
 
 

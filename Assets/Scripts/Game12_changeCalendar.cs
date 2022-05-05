@@ -16,6 +16,15 @@ public class Game12_changeCalendar : MonoBehaviour
     }
 
 
+    private void Update()
+    {
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+        {
+            OnMouseDown();
+        }
+    }
+
+
     private void OnMouseDown()
     {
         today.GetComponent<SpriteRenderer>().enabled = false;
