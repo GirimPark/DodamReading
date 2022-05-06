@@ -4,23 +4,23 @@ using UnityEngine;
 
 public class Game5_PutInPot : MonoBehaviour
 {
-    public GameObject wand;
-    public GameObject pot;
-    public GameObject check;
-
-    public Vector2 sourcePos;
-    public Vector2 potPos;
-
-    float distance;
-
+    GameObject pot;
+    public GameObject pass;
     public GameObject next;
+
+    Vector2 sourcePos;
+    Vector2 potPos;
+
+    public float distance;
 
 
     void Start()
     {
-        potPos = pot.transform.position;
-        wand.GetComponent<SpriteRenderer>().enabled = true;
+        pot = GameObject.Find("가마솥").transform.gameObject;
+
         GetComponent<CircleCollider2D>().enabled = true;
+
+        potPos = pot.transform.position;
     }
 
   
@@ -29,17 +29,13 @@ public class Game5_PutInPot : MonoBehaviour
         sourcePos = transform.position;
         distance = Vector2.Distance(potPos, sourcePos);
 
-        if (distance <= 0.5f)
+        if (distance <= 2f)
         {
             GetComponent<SpriteRenderer>().enabled = false;
             GetComponent<CircleCollider2D>().enabled = false;
-            // 이펙트 넣으면 좋을듯
+            pass.SetActive(true);
 
-            check.GetComponent<SpriteRenderer>().enabled = true;
-            Debug.Log("check 활성화");
-
-            wand.SetActive(false);
-            if(this.tag != "Finish")
+            if (next)
             {
                 next.GetComponent<Game5_PutInPot>().enabled = true;
                 GetComponent<Game5_PutInPot>().enabled = false;

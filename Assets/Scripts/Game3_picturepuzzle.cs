@@ -4,20 +4,17 @@ using UnityEngine;
 
 public class Game3_picturepuzzle : MonoBehaviour
 {
-    Rigidbody2D body;
-    
+    GameObject pass;
 
-    void Start()
+
+    private void Start()
     {
-        body = GetComponent<Rigidbody2D>();
+        pass = transform.GetChild(1).gameObject;
     }
 
-    
+
     void Update()
     {
-        if (transform.localPosition.y >= 250)
-            body.velocity = Vector2.zero;
-
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
         {
             OnMouseDown();
@@ -28,6 +25,6 @@ public class Game3_picturepuzzle : MonoBehaviour
     private void OnMouseDown()
     {
         Debug.Log("Click!");
-        body.AddForce(new Vector2(0, 70f)); 
+        pass.GetComponent<SpriteRenderer>().enabled = true;
     }
 }
