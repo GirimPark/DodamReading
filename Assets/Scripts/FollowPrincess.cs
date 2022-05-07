@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FollowPrincess : MonoBehaviour
 {
-    public float speed;//왕자 움직이는 속도
+    //public float speed;//왕자 움직이는 속도
     float distanceP;//왕자-공주 거리
     public bool closeDistance;//왕자-공주 가까운지
     public bool isWithPrince;
@@ -35,7 +35,7 @@ public class FollowPrincess : MonoBehaviour
             DirectionPrince();*/
         }
         if(princeArrive==true){//도착지 도착했으면 멈추기
-            speed=0;
+            //speed=0;
             closeDistance = false;
             isWithPrince = true;
             transform.position = new Vector3(5.4f, 1.6f, 0);

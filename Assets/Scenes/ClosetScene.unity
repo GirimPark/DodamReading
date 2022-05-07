@@ -270,6 +270,7 @@ GameObject:
   - component: {fileID: 131277232}
   - component: {fileID: 131277234}
   - component: {fileID: 131277233}
+  - component: {fileID: 131277235}
   m_Layer: 0
   m_Name: player
   m_TagString: Untagged
@@ -334,6 +335,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 131277231}
   m_CullTransparentMesh: 1
+--- !u!114 &131277235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 131277231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61141d29b52b84743b52d36b089fec5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cloth1: {fileID: 1416964436}
+  cloth2: {fileID: 404836831}
+  cloth3: {fileID: 1000506318}
+  cloth4: {fileID: 1194412343}
+  change_img1: {fileID: 21300000, guid: 348fc5cf53b5043798897878bfa6a8c0, type: 3}
+  change_img2: {fileID: 21300000, guid: 7e5c1c88a97e34969b17b167711b962f, type: 3}
+  change_img3: {fileID: 21300000, guid: 471a41cf45122414a888d45c649d6011, type: 3}
+  change_img4: {fileID: 21300000, guid: 85f06247fc2734f0381aba166ccf2836, type: 3}
+  player_img: {fileID: 21300000, guid: b011011a0b1a94e4bbfe4afb685e54c4, type: 3}
 --- !u!1 &178893844
 GameObject:
   m_ObjectHideFlags: 0
@@ -513,7 +535,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 348fc5cf53b5043798897878bfa6a8c0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7e5c1c88a97e34969b17b167711b962f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -541,7 +563,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 48.56, y: 40.047775}
+    oldSize: {x: 33.73, y: 41.364693}
     newSize: {x: 48.56, y: 40.047775}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -1337,7 +1359,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1416964437
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1397,7 +1419,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 7e5c1c88a97e34969b17b167711b962f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 348fc5cf53b5043798897878bfa6a8c0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1425,7 +1447,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 33.73, y: 41.364693}
+    oldSize: {x: 48.56, y: 40.047775}
     newSize: {x: 33.73, y: 41.364693}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -1444,7 +1466,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2075663579}
   - component: {fileID: 2075663580}
-  - component: {fileID: 2075663581}
   m_Layer: 0
   m_Name: background
   m_TagString: Untagged
@@ -1527,24 +1548,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2075663581
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2075663578}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61141d29b52b84743b52d36b089fec5b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cloth1: {fileID: 1416964436}
-  cloth2: {fileID: 404836831}
-  cloth3: {fileID: 1000506318}
-  cloth4: {fileID: 1194412343}
-  change_img1: {fileID: 21300000, guid: 7e5c1c88a97e34969b17b167711b962f, type: 3}
-  change_img2: {fileID: 21300000, guid: 348fc5cf53b5043798897878bfa6a8c0, type: 3}
-  change_img3: {fileID: 21300000, guid: 471a41cf45122414a888d45c649d6011, type: 3}
-  change_img4: {fileID: 21300000, guid: 85f06247fc2734f0381aba166ccf2836, type: 3}
-  player_img: {fileID: 21300000, guid: b011011a0b1a94e4bbfe4afb685e54c4, type: 3}

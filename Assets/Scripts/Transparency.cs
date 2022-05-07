@@ -19,37 +19,11 @@ public class Transparency : MonoBehaviour
  }
  void Update()
     {
-        /*손가락 터치
-        if(Input.touchCount>0){
-            Touch touch = Input.GetTouch(0);
-            switch (touch.phase)
-            {
-                case TouchPhase.Began://터치 시작했을 때
-                    break;
-                case TouchPhase.Moved://터치한 상태에서 운직였을 때
-                    break;
-                case TouchPhase.Stationary://움직이다가 가만히 있을 때
-                    break;
-                case TouchPhase.Ended://화면에서 손 뗐을 때
-                    break;
-                case TouchPhase.Canceled://시스템에 의해 터치 취소됐을 때
-                    break;
-            }
-        }
-        */
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            Application.Quit();
-        }
- 
         if(Input.GetMouseButton(0)) //터치했다면
-        /*손가락터치 if(Input.GetTouch(0))*/
         {
-            /*손가락터치 Input.GetTouch(0).position*/
             nowPos = (Input.touchCount == 0) ? (Vector2)Input.mousePosition : Input.GetTouch(0).position;
  
             if (Input.GetMouseButtonDown(0)) //터치 시작인경우
-            /*손가락터치 if(Input.GetTouch(0))*/
                 startPos = nowPos;
  
             deltaPos = startPos - nowPos;
@@ -60,13 +34,6 @@ public class Transparency : MonoBehaviour
                 isDragged = true;
             }
         }
-        /*손가락터치
-        Touch touch = Input.GetTouch(0);
-        switch(touch.phase){
-            case TouchPhase.Moved://드래그
-            case TouchPhase.Ended://화면에서 손 뗐을 때
-        }
-        */
         if (Input.GetMouseButtonUp(0))  //터치 끝
         {
             isDragged = false;
