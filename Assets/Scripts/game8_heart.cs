@@ -7,14 +7,15 @@ public class game8_heart : MonoBehaviour
     bool isPlay;
     float distance;
 
-    public GameObject heartMold;
-    public Vector2 moldPos;
-    public Vector2 shapePos;
+    GameObject heartMold;
+    Vector2 moldPos;
+    Vector2 shapePos;
 
     AudioSource dalkac;
 
     void Start()
     {
+        heartMold = GameObject.FindGameObjectWithTag(this.tag);
         dalkac = GetComponent<AudioSource>();
         isPlay = false;
     }
