@@ -33,24 +33,10 @@ public class AvoidObstacle : MonoBehaviour
     }
     void Update()
     {
-        /*손가락 터치
-        if(Input.touchCount>0){
-            Touch touch = Input.GetTouch(0);
-            switch (touch.phase)
-            {
-                case TouchPhase.Began://터치 시작했을 때
-                    break;
-                case TouchPhase.Moved://터치한 상태에서 운직였을 때
-                    break;
-                case TouchPhase.Stationary://움직이다가 가만히 있을 때
-                    break;
-                case TouchPhase.Ended://화면에서 손 뗐을 때
-                    break;
-                case TouchPhase.Canceled://시스템에 의해 터치 취소됐을 때
-                    break;
-            }
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+        {
+            OnMouseDrag();
         }
-        */
         isWithPrince = GameObject.Find("prince").GetComponent<FollowPrincess>().isWithPrince;//왕자랑 같이 있는지 받아오기
         //도착지&공주 위치 업데이트
         arrivePos = arrivePosition.transform.position;
@@ -76,6 +62,23 @@ public class AvoidObstacle : MonoBehaviour
         /*float x =Input.GetAxisRaw("Horizontal");
         float y = Input.GetAxisRaw("Vertical");
         rigid2D.velocity = new Vector3(x,y,0)*5.0f;*/
+        //왼쪽으로 이동
+        if(Input.GetKey(KeyCode.LeftArrow)){
+            transform.position += new Vector3(-0.05f, 0.0f, 0.0f);
+        }
+        //오른쪽으로 이동
+        if(Input.GetKey(KeyCode.RightArrow)){
+            transform.position += new Vector3(0.05f, 0.0f, 0.0f);
+        }
+        //앞으로 이동
+        if(Input.GetKey(KeyCode.DownArrow)){
+            transform.position += new Vector3(0.0f, -0.05f, 0.0f);
+        }
+        //뒤로 이동
+        if(Input.GetKey(KeyCode.UpArrow)){
+            transform.position += new Vector3(0.0f, 0.05f, 0.0f);
+        }
+
     }
 
     void OnMouseDrag() 

@@ -15,24 +15,6 @@ public class ChangeCursor : MonoBehaviour
         Cursor.SetCursor(cursorImg, Vector2.zero, CursorMode.ForceSoftware);
     }
     void Update(){
-        /*손가락 터치
-        if(Input.touchCount>0){
-            Touch touch = Input.GetTouch(0);
-            switch (touch.phase)
-            {
-                case TouchPhase.Began://터치 시작했을 때
-                    break;
-                case TouchPhase.Moved://터치한 상태에서 운직였을 때
-                    break;
-                case TouchPhase.Stationary://움직이다가 가만히 있을 때
-                    break;
-                case TouchPhase.Ended://화면에서 손 뗐을 때
-                    break;
-                case TouchPhase.Canceled://시스템에 의해 터치 취소됐을 때
-                    break;
-            }
-        }
-        */
         if(Input.GetMouseButtonDown(0)){//마우스 클릭시
             clickN++;
             if(clickN%2==0){
@@ -46,7 +28,7 @@ public class ChangeCursor : MonoBehaviour
                 //커서를 화면에 표시한다
                 Cursor.SetCursor(cursorImg, Vector2.zero, CursorMode.ForceSoftware);
             }
-        }   
+        } 
     }
     //커서 이미지 크기 조정 함수
     Texture2D ScaleTexture(Texture2D source, int targetWidth, int targetHeight)
@@ -64,6 +46,7 @@ public class ChangeCursor : MonoBehaviour
         result.Apply();
         return result;
     }
+    
     //텍스처 읽을 수 있도록 해주는 기능 함수
     Texture2D duplicateTexture(Texture2D source)
     {
