@@ -27,10 +27,10 @@ EditorBuildSettings:
     path: Assets/Scenes/Game3_picturepuzzle.unity
     guid: 2e359d2b7e5418141b3fea3ee2640456
   - enabled: 1
-    path: Assets/Scenes/Game5_makingPotion.unity
+    path: Assets/Scenes/Game6_makingPotion.unity
     guid: 20ba8f1a1e0585e47ad4c23cab5dae53
   - enabled: 1
-    path: Assets/Scenes/game8_test.unity
+    path: Assets/Scenes/game8_heart.unity
     guid: 09aab6c1c67f8eb4387831fee750c122
   - enabled: 1
     path: Assets/Scenes/Game9_findLetter.unity
