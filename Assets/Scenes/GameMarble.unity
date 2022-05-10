@@ -282,11 +282,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 634957240}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d824b8ad78d944be9b68c2ac6c42f3c8, type: 3}
+  m_Script: {fileID: 11500000, guid: a008b7427346e492686c89eae3883045, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   cursorImg: {fileID: 2800000, guid: ebaedae8f4ca64c38be365ea39c70549, type: 3}
-  cursorImg2: {fileID: 2800000, guid: ebaedae8f4ca64c38be365ea39c70549, type: 3}
 --- !u!1 &660246358
 GameObject:
   m_ObjectHideFlags: 0

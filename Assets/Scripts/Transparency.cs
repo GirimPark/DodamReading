@@ -42,7 +42,7 @@ public class Transparency : MonoBehaviour
         //드래그 했을 때
         if (isDragged==true){
             dragN++;
-            Debug.Log("드래그 횟수:"+dragN);
+            //Debug.Log("드래그 횟수:"+dragN);
         }
         //이미지 투명도 조절
         GameObject goImg = GameObject.Find("Canvas/marble");
