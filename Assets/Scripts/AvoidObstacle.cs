@@ -64,19 +64,19 @@ public class AvoidObstacle : MonoBehaviour
         rigid2D.velocity = new Vector3(x,y,0)*5.0f;*/
         //왼쪽으로 이동
         if(Input.GetKey(KeyCode.LeftArrow)){
-            transform.position += new Vector3(-0.05f, 0.0f, 0.0f);
+            transform.position += new Vector3(-0.02f, 0.0f, 0.0f);
         }
         //오른쪽으로 이동
         if(Input.GetKey(KeyCode.RightArrow)){
-            transform.position += new Vector3(0.05f, 0.0f, 0.0f);
+            transform.position += new Vector3(0.02f, 0.0f, 0.0f);
         }
         //앞으로 이동
         if(Input.GetKey(KeyCode.DownArrow)){
-            transform.position += new Vector3(0.0f, -0.05f, 0.0f);
+            transform.position += new Vector3(0.0f, -0.02f, 0.0f);
         }
         //뒤로 이동
         if(Input.GetKey(KeyCode.UpArrow)){
-            transform.position += new Vector3(0.0f, 0.05f, 0.0f);
+            transform.position += new Vector3(0.0f, 0.02f, 0.0f);
         }
 
     }

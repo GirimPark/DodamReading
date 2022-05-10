@@ -45,7 +45,7 @@ public class Transparency : MonoBehaviour
             Debug.Log("드래그 횟수:"+dragN);
         }
         //이미지 투명도 조절
-        GameObject goImg = GameObject.Find("Canvas/princess1");
+        GameObject goImg = GameObject.Find("Canvas/marble");
         Color color = goImg.GetComponent<Image>().color;
         if(0<=dragN && dragN<100){
             color.a=1.0f;
