@@ -59,6 +59,7 @@ public class MouseEvent : MonoBehaviour
             slider.value = (dragN/5);
         }
         else if(dragN>500){
+            transform.localScale = new Vector2(5,5);//크기 맞춰주기
             this_img.sprite=change_img;
             slider.value = 100;
         }
