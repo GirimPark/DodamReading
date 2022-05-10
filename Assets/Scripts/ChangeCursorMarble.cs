@@ -2,34 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChangeCursor : MonoBehaviour
+public class ChangeCursorMarble : MonoBehaviour
 {
+
     [SerializeField] Texture2D cursorImg;
-    [SerializeField] Texture2D cursorImg2;
     int clickN;//마우스 클릭 횟수
     void Start()
     {
         //커서 이미지 크기 조정
-        cursorImg = ScaleTexture(cursorImg, 170, 270);
+        cursorImg = ScaleTexture(cursorImg, 300, 300);
         
         //커서를 화면에 표시한다
         Cursor.SetCursor(cursorImg, Vector2.zero, CursorMode.ForceSoftware);
     }
     void Update(){
-        if(Input.GetMouseButtonDown(0)){//마우스 클릭시
-            clickN++;
-            if(clickN%2==0){
-            //커서 이미지 크기 조정
-            cursorImg2 = ScaleTexture(cursorImg2, 170, 270);
-            //커서를 화면에 표시한다
-            Cursor.SetCursor(cursorImg2, Vector2.zero, CursorMode.ForceSoftware);
-            }else{
-                //커서 이미지 크기 조정
-                cursorImg = ScaleTexture(cursorImg, 170, 270);
-                //커서를 화면에 표시한다
-                Cursor.SetCursor(cursorImg, Vector2.zero, CursorMode.ForceSoftware);
-            }
-        } 
     }
     //커서 이미지 크기 조정 함수
     Texture2D ScaleTexture(Texture2D source, int targetWidth, int targetHeight)

@@ -34,7 +34,7 @@ public class GameCutting : MonoBehaviour
                         //princess1.transform.localScale = new Vector2(5,6);//크기 맞춰주기
                         princess1.GetComponent<Image>().sprite = change_img1;
                     }else{
-                        princess1.transform.localScale = new Vector2(5,6);//크기 맞춰주기
+                        princess1.transform.localScale = new Vector2(7,8);//크기 맞춰주기
                         princess1.GetComponent<Image>().sprite = change_img11;
                     }
                 }else if(click_obj.name=="princess2"){//공주2 클릭했을 때
@@ -43,7 +43,7 @@ public class GameCutting : MonoBehaviour
                         //princess2.transform.localScale = new Vector2(4,6);//크기 맞춰주기
                         princess2.GetComponent<Image>().sprite = change_img2;
                     }else{
-                        princess2.transform.localScale = new Vector2(6,6);//크기 맞춰주기
+                        princess2.transform.localScale = new Vector2(8,8);//크기 맞춰주기
                         princess2.GetComponent<Image>().sprite = change_img22;
                     }
                 }else if(click_obj.name=="princess3"){//공주3 클릭했을 때
@@ -52,7 +52,7 @@ public class GameCutting : MonoBehaviour
                         //princess3.transform.localScale = new Vector2(3,6);//크기 맞춰주기
                         princess3.GetComponent<Image>().sprite = change_img3;
                     }else{
-                        princess3.transform.localScale = new Vector2(4,6);//크기 맞춰주기
+                        princess3.transform.localScale = new Vector2(6,8);//크기 맞춰주기
                         princess3.GetComponent<Image>().sprite = change_img33;
                     }
                 }
