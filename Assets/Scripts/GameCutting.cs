@@ -34,7 +34,7 @@ public class GameCutting : MonoBehaviour
                         //princess1.transform.localScale = new Vector2(5,6);//크기 맞춰주기
                         princess1.GetComponent<Image>().sprite = change_img1;
                     }else{
-                        princess1.transform.localScale = new Vector2(6,6);//크기 맞춰주기
+                        princess1.transform.localScale = new Vector2(5,6);//크기 맞춰주기
                         princess1.GetComponent<Image>().sprite = change_img11;
                     }
                 }else if(click_obj.name=="princess2"){//공주2 클릭했을 때
