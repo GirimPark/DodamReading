@@ -22,6 +22,12 @@ public class FairyVoid : MonoBehaviour
             closetTF = true;
             SceneManager.LoadScene("ClosetScene");
             DontDestroyOnLoad(Text1);
+            /*if(SceneManager.GetActiveScene().name == "ClosetScene"){
+                Destroy(Text1);
+            }
+            if(SceneManager.GetActiveScene().name == "ClosetScene"&&(object)GameObject.Find("TFobj").GetComponent<DestroyObj>().fairyTF!=null){
+                Destroy(Text1);
+            }*/
         }
     }
 }
