@@ -11,23 +11,30 @@ public class FairyVoid : MonoBehaviour
     void Start()
     {
         closetTF = false;
+        PlayerPrefs.DeleteKey("key");
     }
 
     // Update is called once per frame
     void Update()
     {
+        PlayerPrefs.SetInt("key", 10);
         //옷장 씬으로 이동하기
         if(Input.GetMouseButtonDown(0)){
             //fairyT.SetActive(true);
             closetTF = true;
-            SceneManager.LoadScene("ClosetScene");
-            DontDestroyOnLoad(Text1);
-            /*if(SceneManager.GetActiveScene().name == "ClosetScene"){
-                Destroy(Text1);
-            }
-            if(SceneManager.GetActiveScene().name == "ClosetScene"&&(object)GameObject.Find("TFobj").GetComponent<DestroyObj>().fairyTF!=null){
-                Destroy(Text1);
+            //DontDestroyOnLoad(Text1);
+            /*if(SceneManager.GetActiveScene().name=="FairyStoryScene"){
+                PlayerPrefs.SetInt("key", 10);
+            }else {
+                //PlayerPrefs.DeleteAll();
+                if(SceneManager.GetActiveScene().name=="ClosetScene"){
+                    //PlayerPrefs.DeleteKey("key");
+                    PlayerPrefs.SetInt("key0", 20);
+                }
             }*/
+            //PlayerPrefs.SetInt("key", 10);
+            Debug.Log(PlayerPrefs.HasKey("key"));
+            SceneManager.LoadScene("ClosetScene");
         }
     }
 }
