@@ -7,7 +7,7 @@ public class ClothVoid : MonoBehaviour
 {
     public GameObject cloth1, cloth2, cloth3, cloth4; //캐릭터 옷 목록
     public Sprite change_img1, change_img2, change_img3, change_img4, player_img;//변경할 이미지 
-    bool isFairy;//동화구연에서 넘어왓는지 
+    bool isFairy, isTrue;//동화구연에서 넘어왓는지 
     Image thisImg; //현재 이미지
 
     // Start is called before the first frame update
@@ -24,6 +24,7 @@ public class ClothVoid : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //isFairy=isTrue;
         //Debug.Log(GameObject.Find("changeO").GetComponent<FairyVoid>().closetTF);
 
         //isFairy = GameObject.Find("changeO").GetComponent<FairyVoid>().closetTF;
@@ -63,14 +64,19 @@ public class ClothVoid : MonoBehaviour
                 Debug.Log(click_obj.name);
                 //옷 입히기 
                 if(click_obj.name=="cloth1"){
+                    transform.localScale = new Vector2(0.40f,0.36f);//크기 맞춰주기
                     thisImg.sprite = change_img1;
                 }else if(click_obj.name=="cloth2"){
+                    transform.localScale = new Vector2(0.29f,0.34f);//크기 맞춰주기
                     thisImg.sprite = change_img2;
                 }else if(click_obj.name=="cloth3"){
+                    transform.localScale = new Vector2(0.2f,0.35f);//크기 맞춰주기
                     thisImg.sprite = change_img3;
                 }else if(click_obj.name=="cloth4"){
+                    transform.localScale = new Vector2(0.23f,0.35f);//크기 맞춰주기
                     thisImg.sprite = change_img4;
                 }else if(click_obj.name=="btn_reset"){
+                    transform.localScale = new Vector2(0.2f,0.35f);//크기 맞춰주기
                     thisImg.sprite = player_img;
                 }
             }

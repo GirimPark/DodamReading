@@ -10,7 +10,7 @@ public class ChangeCursor : MonoBehaviour
     void Start()
     {
         //커서 이미지 크기 조정
-        cursorImg = ScaleTexture(cursorImg, 170, 270);
+        cursorImg = ScaleTexture(cursorImg, 190, 270);
         
         //커서를 화면에 표시한다
         Cursor.SetCursor(cursorImg, Vector2.zero, CursorMode.ForceSoftware);
@@ -20,12 +20,12 @@ public class ChangeCursor : MonoBehaviour
             clickN++;
             if(clickN%2==0){
             //커서 이미지 크기 조정
-            cursorImg2 = ScaleTexture(cursorImg2, 170, 270);
+            cursorImg2 = ScaleTexture(cursorImg2, 190, 270);
             //커서를 화면에 표시한다
             Cursor.SetCursor(cursorImg2, Vector2.zero, CursorMode.ForceSoftware);
             }else{
                 //커서 이미지 크기 조정
-                cursorImg = ScaleTexture(cursorImg, 170, 270);
+                cursorImg = ScaleTexture(cursorImg, 190, 270);
                 //커서를 화면에 표시한다
                 Cursor.SetCursor(cursorImg, Vector2.zero, CursorMode.ForceSoftware);
             }
