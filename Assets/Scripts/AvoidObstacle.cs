@@ -23,7 +23,6 @@ public class AvoidObstacle : MonoBehaviour
 
     private Rigidbody2D rigid2D;
 
-
     void Start(){
         isArriveTrue = false;//도착 위치에 맞는지
         princeArriveTrue = false;//왕자 도착 위치에 맞는지
@@ -55,30 +54,49 @@ public class AvoidObstacle : MonoBehaviour
             transform.position = arrivePos;//공주 위치랑 도착지 위치 맞춰줌
             isArriveTrue = true;
             princeArriveTrue = true;
+        }else if(isArriveTrue==true&&isWithPrince==true){
+            transform.position = new Vector3(5.4f, 3.1f, 0);
         }
         Debug.Log(transform.position);
 
+        //방향키로 위치 조정
+        if(Input.GetMouseButton(0)){//마우스 클릭시
+            Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            RaycastHit2D hit = Physics2D.Raycast(pos, Camera.main.transform.forward);
+            if(hit.collider!=null){//클릭한 오브젝트 이름 가져옴
+                GameObject click_obj = hit.transform.gameObject;
+                Debug.Log(click_obj.name);
+                if(click_obj.name=="up"){//위쪽으로 이동하기
+                    transform.position += new Vector3(0.0f, 0.02f, 0.0f);
+                }else if(click_obj.name=="down"){//아래로 이동하기
+                    transform.position += new Vector3(0.0f, -0.02f, 0.0f);
+                }else if(click_obj.name=="left"){//왼쪽으로 이동하기
+                    transform.position += new Vector3(-0.02f, 0.0f, 0.0f);
+                }else if(click_obj.name=="right"){//오른쪽으로 이동하기
+                    transform.position += new Vector3(0.02f, 0.0f, 0.0f);
+                }
+            }
+        }
         //마우스로 위치 조정
         /*float x =Input.GetAxisRaw("Horizontal");
         float y = Input.GetAxisRaw("Vertical");
         rigid2D.velocity = new Vector3(x,y,0)*5.0f;*/
         //왼쪽으로 이동
-        if(Input.GetKey(KeyCode.LeftArrow)){
+        /*if(Input.GetKey(KeyCode.LeftArrow)){
             transform.position += new Vector3(-0.02f, 0.0f, 0.0f);
         }
         //오른쪽으로 이동
         if(Input.GetKey(KeyCode.RightArrow)){
             transform.position += new Vector3(0.02f, 0.0f, 0.0f);
         }
-        //앞으로 이동
+        //뒤로 이동
         if(Input.GetKey(KeyCode.DownArrow)){
             transform.position += new Vector3(0.0f, -0.02f, 0.0f);
         }
-        //뒤로 이동
+        //위쪽으로 이동
         if(Input.GetKey(KeyCode.UpArrow)){
             transform.position += new Vector3(0.0f, 0.02f, 0.0f);
-        }
-
+        }*/
     }
 
     void OnMouseDrag() 

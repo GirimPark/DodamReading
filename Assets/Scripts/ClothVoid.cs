@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ClothVoid : MonoBehaviour
 {
@@ -9,14 +10,29 @@ public class ClothVoid : MonoBehaviour
     public Sprite change_img1, change_img2, change_img3, change_img4, player_img;//변경할 이미지 
     bool isFairy, isTrue;//동화구연에서 넘어왓는지 
     Image thisImg; //현재 이미지
+    int trueCount;
 
     // Start is called before the first frame update
     void Start()
     {
-        if((object)GameObject.Find("changeO").GetComponent<FairyVoid>().closetTF!=null){
+        /*if((object)GameObject.Find("changeO").GetComponent<FairyVoid>().closetTF!=null){
             isFairy=true;
         }else{
             isFairy=false;
+        }*/
+        /*if(SceneManager.GetActiveScene().name=="ClosetScene"){
+            PlayerPrefs.DeleteKey("key");
+        }else if(SceneManager.GetActiveScene().name=="FairyStoryScene"){
+            PlayerPrefs.SetInt("key", 10);
+        }*/
+        //PlayerPrefs.DeleteAll();
+        //옷장씬 갔다와야지만 isFairy 활성화 되도록
+        if(PlayerPrefs.HasKey("key")==true){
+            trueCount++;
+            if(trueCount>=1){
+                isFairy=true;
+                PlayerPrefs.DeleteKey("key");
+            }
         }
         thisImg = GetComponent<Image>();
     }
@@ -24,6 +40,7 @@ public class ClothVoid : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //isFairy=PlayerPrefs.HasKey("key");
         //isFairy=isTrue;
         //Debug.Log(GameObject.Find("changeO").GetComponent<FairyVoid>().closetTF);
 
