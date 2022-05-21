@@ -16,7 +16,7 @@ public class Game5_PutInPot : MonoBehaviour
 
     void Start()
     {
-        pot = GameObject.Find("°¡¸¶¼Ü").transform.gameObject;
+        pot = GameObject.Find("ê°€ë§ˆì†¥").transform.gameObject;
 
         GetComponent<CircleCollider2D>().enabled = true;
 

@@ -4,21 +4,24 @@ using UnityEngine;
 
 public class Game9_findLetter : MonoBehaviour
 {
-    public GameObject closet; // 1
-    public GameObject bed; // 2
-    public GameObject drawer; // 3
-    public GameObject letter; // 4
-    public GameObject closetText;
-    public GameObject bedText;
-    public GameObject drawerText;
-    public GameObject letterText;
+    GameObject bed;
+    GameObject window;
+    GameObject drawer; 
+    GameObject letter;
+    GameObject text;
 
     public int where;
     
     void Start()
     {
+        bed = GameObject.Find("침대");
+        window = GameObject.Find("창문");
+        drawer = GameObject.Find("서랍장");
+        letter = drawer.transform.GetChild(1).gameObject;
+        text = GameObject.Find("말풍선");
+
         GetComponent<SpriteRenderer>().enabled = true;
-        transform.position = closet.transform.position;
+        transform.position = bed.transform.position;
         where = 1;
     }
 
@@ -34,26 +37,26 @@ public class Game9_findLetter : MonoBehaviour
 
     private void OnMouseDown()
     {
+        //  case마다 오디오 플레이 넣어주면 됨
         switch (where)
         {
             case 1:
-                closetText.SetActive(true);
-                transform.position = bed.transform.position;
-                Invoke("Invisible", 2);
+                bed.transform.GetChild(0).gameObject.SetActive(true);
+                transform.position = window.transform.position;
+                Invoke("Invisible", 1);
                 break;
             case 2:
-                bedText.SetActive(true);
+                window.transform.GetChild(0).gameObject.SetActive(true);
                 transform.position = drawer.transform.position;
-                Invoke("Invisible", 2);
+                Invoke("Invisible", 1);
                 break;
             case 3:
-                drawerText.SetActive(true);
-                transform.position = letter.transform.position;
-                Invoke("Invisible", 2);
-                break;
-            case 4:
-                letterText.SetActive(true);
-                Invoke("Invisible", 2);
+                drawer.transform.GetChild(0).gameObject.SetActive(true);
+                GetComponent<SpriteRenderer>().enabled = false;
+                letter.GetComponent<SpriteRenderer>().enabled = true;
+                text.transform.GetChild(0).gameObject.SetActive(false);
+                text.transform.GetChild(1).gameObject.SetActive(true);
+                Invoke("Invisible", 1);
                 break;
         }
     }
@@ -61,23 +64,19 @@ public class Game9_findLetter : MonoBehaviour
 
     private void Invisible()
     {
-        Debug.Log("Invisible() ȣ����� & " + where);
+        Debug.Log("Invisible() 호출됐음 & " + where);
         switch (where)
         {
             case 1:
-                closetText.SetActive(false);
+                bed.transform.GetChild(0).gameObject.SetActive(false);
                 where++;
                 break;
             case 2:
-                bedText.SetActive(false);
+                window.transform.GetChild(0).gameObject.SetActive(false);
                 where++;
                 break;
             case 3:
-                drawerText.SetActive(false);
-                where++;
-                break;
-            case 4:
-                letterText.SetActive(false);
+                drawer.transform.GetChild(0).gameObject.SetActive(false);
                 where++;
                 break;
         }

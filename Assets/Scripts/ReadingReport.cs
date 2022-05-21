@@ -14,10 +14,10 @@ public class ReadingReport : MonoBehaviour
         spriteR = this.GetComponent<SpriteRenderer>();
         sprites = Resources.LoadAll<Sprite>("Reports");
 
-        //  ÆÄÀÏÀÌ Á¸ÀçÇÑ´Ù¸é
+        //  íŒŒì¼ì´ ì¡´ì¬í•œë‹¤ë©´
         if(sprites.Length > 0)
             spriteR.sprite = sprites[num++];
-        //  ±âÁ¸ ÀÌ¹ÌÁö ÆÄÀÏÀÌ ¾ø´Ù¸é
+        //  ê¸°ì¡´ ì´ë¯¸ì§€ íŒŒì¼ì´ ì—†ë‹¤ë©´
         else
         {
             string path = PlayerPrefs.GetString("path");
@@ -26,7 +26,7 @@ public class ReadingReport : MonoBehaviour
             byte[] imgBytes = System.IO.File.ReadAllBytes(path);
             if (imgBytes.Length > 0)
             {
-                Debug.Log("imgBytes ÀÖÀ½");
+                Debug.Log("imgBytes ìˆìŒ");
                 Texture2D texture = new Texture2D(Screen.width, Screen.height, TextureFormat.RGB24, false);
                 texture.LoadImage(imgBytes);
                 Rect rect = new Rect(0, 0, texture.width, texture.height);
@@ -60,7 +60,7 @@ public class ReadingReport : MonoBehaviour
             byte[] imgBytes = System.IO.File.ReadAllBytes(path);
             if (imgBytes.Length > 0)
             {
-                Debug.Log("imgBytes ÀÖÀ½");
+                Debug.Log("imgBytes ìˆìŒ");
                 Texture2D texture = new Texture2D(Screen.width, Screen.height, TextureFormat.RGB24, false);
                 texture.LoadImage(imgBytes);
                 Rect rect = new Rect(0, 0, texture.width, texture.height);

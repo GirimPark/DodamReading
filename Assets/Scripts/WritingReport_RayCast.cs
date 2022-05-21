@@ -6,10 +6,10 @@ public class WritingReport_RayCast : MonoBehaviour
 {
     float distance = 15f;
     int num = 0;
-    public int maxNum = 1; // 2¹®Àå ±âÁØ
+    public int maxNum = 1; // 2ë¬¸ì¥ ê¸°ì¤€
     string hittedTag;
-    bool stext = false; //  ¼±ÅÃtext È°¼ºÈ­ ¿©ºÎ
-    bool already = false;   //  ¼±ÅÃtext È°¼ºÈ­ ÇÑ ¹ø¸¸ ÇÏµµ·Ï
+    bool stext = false; //  ì„ íƒtext í™œì„±í™” ì—¬ë¶€
+    bool already = false;   //  ì„ íƒtext í™œì„±í™” í•œ ë²ˆë§Œ í•˜ë„ë¡
     GameObject curParent;
     RaycastHit2D hit;
     string path;
@@ -33,19 +33,19 @@ public class WritingReport_RayCast : MonoBehaviour
             curParent.transform.GetChild(i).gameObject.SetActive(true);
         }
         stext = true;
-        Debug.Log("¼±ÅÃ text È°¼ºÈ­");
+        Debug.Log("ì„ íƒ text í™œì„±í™”");
     }
 
 
-    //  ºÎ¸ğtag > À¯µµÅØ½ºÆ®=0, ºóÄ­ÅØ½ºÆ®=1, ¼±ÅÃÅØ½ºÆ®=2
+    //  ë¶€ëª¨tag > ìœ ë„í…ìŠ¤íŠ¸=0, ë¹ˆì¹¸í…ìŠ¤íŠ¸=1, ì„ íƒí…ìŠ¤íŠ¸=2
     void Update()
     {
-        //  À¯µµtext, ¼±ÅÃtext È°¼ºÈ­
+        //  ìœ ë„text, ì„ íƒtext í™œì„±í™”
         if (!stext && !already && num<=maxNum)
         {
-            curParent = GameObject.Find("À¯µµÅØ½ºÆ®" + (num + 1).ToString());
+            curParent = GameObject.Find("ìœ ë„í…ìŠ¤íŠ¸" + (num + 1).ToString());
             curParent.transform.GetChild(0).gameObject.SetActive(true);
-            Debug.Log(curParent.name+" È°¼ºÈ­");
+            Debug.Log(curParent.name+" í™œì„±í™”");
 
             curParent = GameObject.FindGameObjectsWithTag(num.ToString())[1];
             for (int i = 0; i < 4; i++)
@@ -54,10 +54,10 @@ public class WritingReport_RayCast : MonoBehaviour
             }
             stext = true;
             already = true;
-            Debug.Log("¼±ÅÃ text È°¼ºÈ­");
+            Debug.Log("ì„ íƒ text í™œì„±í™”");
         }
         
-        //  Å¬¸¯½Ã ray() ½ÇÇà
+        //  í´ë¦­ì‹œ ray() ì‹¤í–‰
         if(Input.GetMouseButtonDown(0) 
             || (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began))
         {
@@ -88,7 +88,7 @@ public class WritingReport_RayCast : MonoBehaviour
         hittedTag = hit.collider.gameObject.tag;
         
 
-        //  ºóÄ­text ¼±ÅÃ¿¡ ¸Â°Ô È°¼ºÈ­
+        //  ë¹ˆì¹¸text ì„ íƒì— ë§ê²Œ í™œì„±í™”
         curParent = GameObject.FindGameObjectsWithTag(num.ToString())[0];
         if (hittedTag.Equals("choice1"))
             curParent.transform.GetChild(0).gameObject.SetActive(true);  
@@ -98,22 +98,22 @@ public class WritingReport_RayCast : MonoBehaviour
             curParent.transform.GetChild(2).gameObject.SetActive(true);
         else
             curParent.transform.GetChild(3).gameObject.SetActive(true);
-        Debug.Log("ºóÄ­ text È°¼ºÈ­");
+        Debug.Log("ë¹ˆì¹¸ text í™œì„±í™”");
         
 
-        //  ¼±ÅÃtext ºñÈ°¼ºÈ­
+        //  ì„ íƒtext ë¹„í™œì„±í™”
         curParent = GameObject.FindGameObjectsWithTag(num.ToString())[1];
         for (int i = 0; i < 4; i++)
         {
             curParent.transform.GetChild(i).gameObject.SetActive(false);
         }
         stext = false;
-        Debug.Log("¼±ÅÃ text ºñÈ°¼ºÈ­");
+        Debug.Log("ì„ íƒ text ë¹„í™œì„±í™”");
         num++;
     }
 
     
-    IEnumerator Rendering() //  È­¸é Ä¸ÃÄ
+    IEnumerator Rendering() //  í™”ë©´ ìº¡ì³
     {
         yield return new WaitForEndOfFrame();
 
