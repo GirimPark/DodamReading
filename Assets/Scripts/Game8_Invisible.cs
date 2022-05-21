@@ -10,9 +10,9 @@ public class Game8_Invisible : MonoBehaviour
 
     private void Start()
     {
-        ChatWindow = GameObject.Find("¸»Ç³¼±");
-        prince = GameObject.Find("¿ÕÀÚ");
-        princess = GameObject.Find("°øÁÖ");
+        ChatWindow = GameObject.Find("ë§í’ì„ ");
+        prince = GameObject.Find("ì™•ì");
+        princess = GameObject.Find("ê³µì£¼");
     }
 
 

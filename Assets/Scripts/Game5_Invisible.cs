@@ -9,8 +9,8 @@ public class Game5_Invisible : MonoBehaviour
 
     private void Start()
     {
-        ChatWindow = GameObject.Find("¸»Ç³¼±");
-        paper = GameObject.Find("µÎ·ç¸¶±â");
+        ChatWindow = GameObject.Find("ë§í’ì„ ");
+        paper = GameObject.Find("ë‘ë£¨ë§ˆê¸°");
         paper.GetComponent<SpriteRenderer>().enabled = false;
     }
 
