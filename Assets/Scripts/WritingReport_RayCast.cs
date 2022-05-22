@@ -57,23 +57,43 @@ public class WritingReport_RayCast : MonoBehaviour
         }
         
         //  클릭시 ray() 실행
-        if(Input.GetMouseButtonDown(0) 
-            || (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began))
+        if(Input.GetMouseButtonDown(0))
         {
             if (Input.mousePosition != null) position = Input.mousePosition;
-            //if (Input.GetTouch(0).position != null) position = Input.GetTouch(0).position;
             position = cam.ScreenToWorldPoint(position);
 
             hit = Physics2D.Raycast(position, transform.forward, distance);
             
             Debug.DrawRay(position, transform.forward * 500, Color.red, 0.3f);
             
-            if(hit && num < maxNum)
+            if(hit && hit.collider.gameObject.tag != "Untagged")
             {
                 Ray(ref hit, ref num);
                 already = false;
             }
             if(hit && hit.collider.gameObject.tag == "Finish")
+            {
+                StartCoroutine(Rendering());
+                StartCoroutine(LoadMyAsyncScene());
+            }
+        }
+
+        //  터치시 ray() 실행
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+        {
+            if (Input.GetTouch(0).position != null) position = Input.GetTouch(0).position;
+            position = cam.ScreenToWorldPoint(position);
+
+            hit = Physics2D.Raycast(position, transform.forward, distance);
+
+            Debug.DrawRay(position, transform.forward * 500, Color.red, 0.3f);
+
+            if (hit && hit.collider.gameObject.tag != "Untagged")
+            {
+                Ray(ref hit, ref num);
+                already = false;
+            }
+            if (hit && hit.collider.gameObject.tag == "Finish")
             {
                 StartCoroutine(Rendering());
                 StartCoroutine(LoadMyAsyncScene());
