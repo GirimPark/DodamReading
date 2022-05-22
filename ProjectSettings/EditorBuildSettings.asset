@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/WritingReportScene.unity
+    path: Assets/Scenes/WritingReportScene_princess.unity
     guid: 8ac4517bb44f80e459c945d7fdc67032
   - enabled: 1
     path: Assets/Scenes/BookReportScene.unity

@@ -4,9 +4,10 @@ using UnityEngine.SceneManagement;
 
 public class WritingReport_RayCast : MonoBehaviour
 {
+    GameObject done;
     float distance = 15f;
     int num = 0;
-    public int maxNum = 1; // 2문장 기준
+    int maxNum = 3; // 4문장 기준
     string hittedTag;
     bool stext = false; //  선택text 활성화 여부
     bool already = false;   //  선택text 활성화 한 번만 하도록
@@ -25,6 +26,7 @@ public class WritingReport_RayCast : MonoBehaviour
 
     void Start()
     {
+        done = GameObject.Find("완료");
         cam = GetComponent<Camera>();
 
         curParent = GameObject.FindGameObjectsWithTag(num.ToString())[1];
@@ -33,7 +35,6 @@ public class WritingReport_RayCast : MonoBehaviour
             curParent.transform.GetChild(i).gameObject.SetActive(true);
         }
         stext = true;
-        Debug.Log("선택 text 활성화");
     }
 
 
@@ -41,11 +42,10 @@ public class WritingReport_RayCast : MonoBehaviour
     void Update()
     {
         //  유도text, 선택text 활성화
-        if (!stext && !already && num<=maxNum)
+        if (!stext && !already && num<maxNum)
         {
             curParent = GameObject.Find("유도텍스트" + (num + 1).ToString());
             curParent.transform.GetChild(0).gameObject.SetActive(true);
-            Debug.Log(curParent.name+" 활성화");
 
             curParent = GameObject.FindGameObjectsWithTag(num.ToString())[1];
             for (int i = 0; i < 4; i++)
@@ -54,7 +54,6 @@ public class WritingReport_RayCast : MonoBehaviour
             }
             stext = true;
             already = true;
-            Debug.Log("선택 text 활성화");
         }
         
         //  클릭시 ray() 실행
@@ -62,22 +61,22 @@ public class WritingReport_RayCast : MonoBehaviour
             || (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began))
         {
             if (Input.mousePosition != null) position = Input.mousePosition;
-            if (Input.GetTouch(0).position != null) position = Input.GetTouch(0).position;
+            //if (Input.GetTouch(0).position != null) position = Input.GetTouch(0).position;
             position = cam.ScreenToWorldPoint(position);
 
             hit = Physics2D.Raycast(position, transform.forward, distance);
             
             Debug.DrawRay(position, transform.forward * 500, Color.red, 0.3f);
-            if (hit && num == maxNum)
-            {
-                Ray(ref hit, ref num);
-                StartCoroutine(Rendering());
-                StartCoroutine(LoadMyAsyncScene());
-            }
-            else if(hit && num < maxNum)
+            
+            if(hit && num < maxNum)
             {
                 Ray(ref hit, ref num);
                 already = false;
+            }
+            if(hit && hit.collider.gameObject.tag == "Finish")
+            {
+                StartCoroutine(Rendering());
+                StartCoroutine(LoadMyAsyncScene());
             }
         }
     }
@@ -98,7 +97,6 @@ public class WritingReport_RayCast : MonoBehaviour
             curParent.transform.GetChild(2).gameObject.SetActive(true);
         else
             curParent.transform.GetChild(3).gameObject.SetActive(true);
-        Debug.Log("빈칸 text 활성화");
         
 
         //  선택text 비활성화
@@ -108,8 +106,19 @@ public class WritingReport_RayCast : MonoBehaviour
             curParent.transform.GetChild(i).gameObject.SetActive(false);
         }
         stext = false;
-        Debug.Log("선택 text 비활성화");
         num++;
+        Debug.Log(num);
+
+        if (num == maxNum)
+        {
+            curParent = GameObject.Find("유도텍스트" + (num + 1).ToString());
+            curParent.transform.GetChild(0).gameObject.SetActive(true);
+            curParent.transform.GetChild(1).gameObject.SetActive(true);
+
+            done.GetComponent<SpriteRenderer>().enabled = true;
+            done.GetComponent<BoxCollider2D>().enabled = true;
+            num++;
+        }
     }
 
     
