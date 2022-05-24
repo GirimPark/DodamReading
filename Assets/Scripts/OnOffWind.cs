@@ -35,6 +35,9 @@ public class OnOffWind : MonoBehaviour, IPointerClickHandler
         
         
     }
+    void Start(){
+        PlayerPrefs.DeleteKey("mermaid");
+    }
     void Update(){
         if(SceneManager.GetActiveScene().name=="M1_StoryScene"){
             if(clickN==1){
@@ -76,9 +79,12 @@ public class OnOffWind : MonoBehaviour, IPointerClickHandler
             if(clickN==1){
                 scene9.SetActive(false);
                 scene10.SetActive(true);
-            }/*else if(clickN==2){
+            }else if(clickN==2){
                 scene10.SetActive(false);
-            }*/
+                PlayerPrefs.SetInt("mermaid", 10);
+                Debug.Log(PlayerPrefs.HasKey("mermaid"));
+                SceneManager.LoadScene("ClosetScene");  
+            }
         }
     }
 }

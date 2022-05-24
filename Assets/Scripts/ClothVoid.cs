@@ -8,7 +8,7 @@ public class ClothVoid : MonoBehaviour
 {
     public GameObject cloth1, cloth2, cloth3, cloth4; //캐릭터 옷 목록
     public Sprite change_img1, change_img2, change_img3, change_img4, player_img;//변경할 이미지 
-    bool isFairy, isTrue;//동화구연에서 넘어왓는지 
+    bool isMermaid, isTrue;//동화구연에서 넘어왓는지 
     Image thisImg; //현재 이미지
     int trueCount;
 
@@ -27,11 +27,11 @@ public class ClothVoid : MonoBehaviour
         }*/
         //PlayerPrefs.DeleteAll();
         //옷장씬 갔다와야지만 isFairy 활성화 되도록
-        if(PlayerPrefs.HasKey("key")==true){
+        if(PlayerPrefs.HasKey("mermaid")==true){
             trueCount++;
             if(trueCount>=1){
-                isFairy=true;
-                PlayerPrefs.DeleteKey("key");
+                isMermaid=true;
+                PlayerPrefs.DeleteKey("mermaid");
             }
         }
         thisImg = GetComponent<Image>();
@@ -40,38 +40,13 @@ public class ClothVoid : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //isFairy=PlayerPrefs.HasKey("key");
-        //isFairy=isTrue;
-        //Debug.Log(GameObject.Find("changeO").GetComponent<FairyVoid>().closetTF);
-
-        //isFairy = GameObject.Find("changeO").GetComponent<FairyVoid>().closetTF;
         //동화 구연에서 값이 넘어왔다면
-        if(isFairy == true){
+        if(isMermaid == true){
             //옷 목록 보여주기
-            cloth1.SetActive(true);
-            cloth2.SetActive(true);
-            cloth3.SetActive(true);
+            //cloth1.SetActive(true);
+            //cloth2.SetActive(true);
+            //cloth3.SetActive(true);
             cloth4.SetActive(true);
-            /*if(Input.GetMouseButtonDown(0)){//마우스 클릭시
-                Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                RaycastHit2D hit = Physics2D.Raycast(pos, Camera.main.transform.forward);
-                if(hit.collider!=null){//클릭한 오브젝트 이름 가져옴
-                    GameObject click_obj = hit.transform.gameObject;
-                    Debug.Log(click_obj.name);
-                    //옷 입히기 
-                    if(click_obj.name=="cloth1"){
-                        thisImg.sprite = change_img1;
-                    }else if(click_obj.name=="cloth2"){
-                        thisImg.sprite = change_img2;
-                    }else if(click_obj.name=="cloth3"){
-                        thisImg.sprite = change_img3;
-                    }else if(click_obj.name=="cloth4"){
-                        thisImg.sprite = change_img4;
-                    }else if(click_obj.name=="btn_reset"){
-                        thisImg.sprite = player_img;
-                    }
-                }
-            }*/
         }
         if(Input.GetMouseButtonDown(0)){//마우스 클릭시
             Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
