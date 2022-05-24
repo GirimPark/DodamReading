@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MouseEvent : MonoBehaviour
 {
@@ -62,6 +63,7 @@ public class MouseEvent : MonoBehaviour
             transform.localScale = new Vector2(5,5);//크기 맞춰주기
             this_img.sprite=change_img;
             slider.value = 100;
+            SceneManager.LoadScene("M3_StoryScene");//신 변경
         }
     }
 }
