@@ -65,17 +65,18 @@ public class WritingReport_RayCast : MonoBehaviour
             hit = Physics2D.Raycast(position, transform.forward, distance);
             
             Debug.DrawRay(position, transform.forward * 500, Color.red, 0.3f);
-            
-            if(hit && hit.collider.gameObject.tag != "Untagged")
-            {
-                Ray(ref hit, ref num);
-                already = false;
-            }
-            if(hit && hit.collider.gameObject.tag == "Finish")
+
+            if (hit && hit.collider.gameObject.tag == "Finish")
             {
                 StartCoroutine(Rendering());
                 StartCoroutine(LoadMyAsyncScene());
             }
+            else if (hit && hit.collider.gameObject.tag != "Untagged")
+            {
+                Ray(ref hit, ref num);
+                already = false;
+            }
+            
         }
 
         //  터치시 ray() 실행
@@ -88,15 +89,15 @@ public class WritingReport_RayCast : MonoBehaviour
 
             Debug.DrawRay(position, transform.forward * 500, Color.red, 0.3f);
 
-            if (hit && hit.collider.gameObject.tag != "Untagged")
-            {
-                Ray(ref hit, ref num);
-                already = false;
-            }
             if (hit && hit.collider.gameObject.tag == "Finish")
             {
                 StartCoroutine(Rendering());
                 StartCoroutine(LoadMyAsyncScene());
+            }
+            else if (hit && hit.collider.gameObject.tag != "Untagged")
+            {
+                Ray(ref hit, ref num);
+                already = false;
             }
         }
     }
