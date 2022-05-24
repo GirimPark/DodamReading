@@ -62,4 +62,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SettingScene.unity
     guid: c0ddc9d2d28131046b536a71607ca571
+  - enabled: 1
+    path: Assets/Scenes/MStory/M1_StoryScene.unity
+    guid: 006b91bd645d28941a62e3128523adac
+  - enabled: 1
+    path: Assets/Scenes/MStory/M2_StoryScene.unity
+    guid: 4e7cedde8becf69418eb98e103a27588
+  - enabled: 1
+    path: Assets/Scenes/MStory/M3_StoryScene.unity
+    guid: f7a4ef572ed1eb649a9ba40545dafefd
+  - enabled: 1
+    path: Assets/Scenes/MStory/M4_StoryScene.unity
+    guid: 7e7f86fa29fbae64d8bc210ed5663731
   m_configObjects: {}

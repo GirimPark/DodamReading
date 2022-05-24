@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class ChangeText : MonoBehaviour
 {
@@ -26,6 +27,7 @@ public class ChangeText : MonoBehaviour
         if(isArriveTrue == true){
             textArrive.text = "다음 게임으로 넘어가겠습니다.";//텍스트 변경
             textArrive.color = Color.blue;//텍스트 색상 변경
+            SceneManager.LoadScene("M2_StoryScene");//신 변경
         }else{
             textArrive.text = "왕자를 데리고 와주세요";//텍스트 변경
             textArrive.color = Color.red;//텍스트 색상 변경
