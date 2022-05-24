@@ -376,7 +376,7 @@ GameObject:
   - component: {fileID: 1204028484}
   - component: {fileID: 1204028483}
   m_Layer: 0
-  m_Name: book3
+  m_Name: report3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -452,7 +452,7 @@ GameObject:
   - component: {fileID: 1247171040}
   - component: {fileID: 1247171044}
   m_Layer: 0
-  m_Name: book2
+  m_Name: report2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1148,7 +1148,7 @@ GameObject:
   - component: {fileID: 1939633832}
   - component: {fileID: 1939633831}
   m_Layer: 5
-  m_Name: book1
+  m_Name: report1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

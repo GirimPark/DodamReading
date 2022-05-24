@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -13,7 +13,9 @@ public class OnOffWind : MonoBehaviour, IPointerClickHandler
     public GameObject scene1, scene2, scene3;//신123
     public GameObject scene4, scene5;//신123
     public GameObject scene6, scene7, scene8, scene9;//신6789
-     public GameObject scene10;//신10
+    public GameObject scene10;//신10
+
+    string scene = "WritingReportScene_";
     int clickN=0;
     public void OnPointerClick(PointerEventData eventData)
     {
@@ -83,7 +85,8 @@ public class OnOffWind : MonoBehaviour, IPointerClickHandler
                 scene10.SetActive(false);
                 PlayerPrefs.SetInt("mermaid", 10);
                 Debug.Log(PlayerPrefs.HasKey("mermaid"));
-                SceneManager.LoadScene("ClosetScene");  
+                scene = scene + SceneManager.GetActiveScene().name[0];
+                SceneManager.LoadScene(scene);  
             }
         }
     }
