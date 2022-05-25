@@ -63,7 +63,14 @@ public class MouseEvent : MonoBehaviour
             transform.localScale = new Vector2(5,5);//크기 맞춰주기
             this_img.sprite=change_img;
             slider.value = 100;
+            //1초 기다렸다가 다음 신으로 이동하기
+            StartCoroutine(WaitAndLoadScene()); 
+            IEnumerator WaitAndLoadScene()
+            {
+            yield return new WaitForSeconds(1.0f);
+
             SceneManager.LoadScene("M3_StoryScene");//신 변경
+            }
         }
     }
 }
