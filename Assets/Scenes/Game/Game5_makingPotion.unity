@@ -1023,6 +1023,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pass: {fileID: 93043269}
   next: {fileID: 1412066934}
+  nextScene: 
   distance: 0
 --- !u!58 &1393092928
 CircleCollider2D:
@@ -1143,6 +1144,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pass: {fileID: 1782196655}
   next: {fileID: 1559826930}
+  nextScene: 
   distance: 0
 --- !u!58 &1412066937
 CircleCollider2D:
@@ -1500,6 +1502,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pass: {fileID: 267017631}
   next: {fileID: 0}
+  nextScene: W3_StoryScene
   distance: 0
 --- !u!58 &1559826933
 CircleCollider2D:

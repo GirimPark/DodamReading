@@ -8,15 +8,15 @@ public class GoWritingReport : MonoBehaviour
     string scene = "WritingReportScene_";
     void Start()
     {
-        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved)
-        {
-            OnMouseDown();
-        }
+        
     }
 
     void Update()
     {
-        
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved)
+        {
+            OnMouseDown();
+        }
     }
 
 

@@ -27,6 +27,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Game/Game3_picturepuzzle.unity
     guid: 2e359d2b7e5418141b3fea3ee2640456
   - enabled: 1
+    path: Assets/Scenes/Game/Game5_makingPotion.unity
+    guid: a455b6ccdde8f124d80c5a1fbc6a6ce4
+  - enabled: 1
     path: Assets/Scenes/Game/Game6_makingPotion.unity
     guid: 20ba8f1a1e0585e47ad4c23cab5dae53
   - enabled: 1
@@ -74,4 +77,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MStory/M4_StoryScene.unity
     guid: 7e7f86fa29fbae64d8bc210ed5663731
+  - enabled: 1
+    path: Assets/Scenes/WStory/W1_StoryScene.unity
+    guid: c63863da1d814014c9a4a70d5827e544
+  - enabled: 1
+    path: Assets/Scenes/WStory/W2_StoryScene.unity
+    guid: 3fb8d18c859476442a90d0ec6ad9691b
+  - enabled: 1
+    path: Assets/Scenes/WStory/W3_StoryScene.unity
+    guid: b817a023f14e24e4cafed7df58240ba1
+  - enabled: 1
+    path: Assets/Scenes/WStory/W4_StoryScene.unity
+    guid: 06746548105698446ac9f8785ee07bef
+  - enabled: 1
+    path: Assets/Scenes/WritingReportScene_W.unity
+    guid: 51ba9e54d7b99164dbddcee596a81377
   m_configObjects: {}
