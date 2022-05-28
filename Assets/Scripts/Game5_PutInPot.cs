@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Game5_PutInPot : MonoBehaviour
 {
     GameObject pot;
     public GameObject pass;
     public GameObject next;
+    public string nextScene;
 
     Vector2 sourcePos;
     Vector2 potPos;
@@ -39,6 +41,10 @@ public class Game5_PutInPot : MonoBehaviour
             {
                 next.GetComponent<Game5_PutInPot>().enabled = true;
                 GetComponent<Game5_PutInPot>().enabled = false;
+            }
+            else
+            {
+                SceneManager.LoadScene(nextScene);
             }
         }
 
