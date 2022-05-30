@@ -92,4 +92,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/WritingReportScene_W.unity
     guid: 51ba9e54d7b99164dbddcee596a81377
+  - enabled: 1
+    path: Assets/Scenes/SStory/S1_StoryScene.unity
+    guid: b291b1ed9269c4660af50abfc2f4cfc2
+  - enabled: 1
+    path: Assets/Scenes/SStory/S2_StoryScene.unity
+    guid: 07029ae97e45c494aa6dc370c6383e0c
+  - enabled: 1
+    path: Assets/Scenes/SStory/S4_StoryScene.unity
+    guid: d5b75f2e1031d4bdb90a3fd6ebbd96bd
+  - enabled: 1
+    path: Assets/Scenes/SStory/S5_StoryScene.unity
+    guid: 3760bd0703f74416599864b3c027a072
   m_configObjects: {}

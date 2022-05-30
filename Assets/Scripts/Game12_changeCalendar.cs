@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Game12_changeCalendar : MonoBehaviour
 {
@@ -48,6 +49,15 @@ public class Game12_changeCalendar : MonoBehaviour
         {
             next.SetActive(true);
             this.gameObject.SetActive(false);
+        }else if(this.tag == "Finish"){
+            //1초 기다렸다가 다음 신으로 이동하기
+            StartCoroutine(WaitAndLoadScene()); 
+            IEnumerator WaitAndLoadScene()
+            {
+            yield return new WaitForSeconds(1.0f);
+
+            SceneManager.LoadScene("S5_StoryScene");//신 변경
+            }
         }
     }
 }

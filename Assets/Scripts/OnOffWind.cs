@@ -9,11 +9,13 @@ public class OnOffWind : MonoBehaviour, IPointerClickHandler
     /*public GameObject[] On = new GameObject[0];
     public GameObject[] Off = new GameObject[0];
     public GameObject[] destroy = new GameObject[0];*/
-
+    //인어공주 신
     public GameObject scene1, scene2, scene3;//신123
     public GameObject scene4, scene5;//신123
     public GameObject scene6, scene7, scene8, scene9;//신6789
     public GameObject scene10;//신10
+    //언니들 신
+    public GameObject Sscene1, Sscene2, Sscene3, Sscene4, Sscene5, Sscene6, Sscene7, Sscene8;
 
     string scene = "WritingReportScene_";
     int clickN=0;
@@ -83,10 +85,49 @@ public class OnOffWind : MonoBehaviour, IPointerClickHandler
                 scene10.SetActive(true);
             }else if(clickN==2){
                 scene10.SetActive(false);
+                //인어공주 옷 활성화
                 PlayerPrefs.SetInt("mermaid", 10);
                 Debug.Log(PlayerPrefs.HasKey("mermaid"));
                 scene = scene + SceneManager.GetActiveScene().name[0];
                 SceneManager.LoadScene(scene);  
+            }
+        }else if(SceneManager.GetActiveScene().name=="S1_StoryScene"){//인어공주 언니들 신
+            if(clickN==1){
+                Sscene1.SetActive(false);
+                SceneManager.LoadScene("Game10_OX");
+            }
+        }else if(SceneManager.GetActiveScene().name=="S2_StoryScene"){
+            if(clickN==1){
+                Sscene1.SetActive(false);
+                Sscene2.SetActive(true);
+            }else if(clickN==2){
+                Sscene2.SetActive(false);
+                Sscene3.SetActive(true);
+            }else if(clickN==3){
+                Sscene3.SetActive(false);
+                Sscene4.SetActive(true);
+            }else if(clickN==4){
+                Sscene4.SetActive(false);
+                SceneManager.LoadScene("Game11Cutting");
+            }
+        }else if(SceneManager.GetActiveScene().name=="S4_StoryScene"){
+            if(clickN==1){
+                Sscene4.SetActive(false);
+                Sscene5.SetActive(true);
+            }else if(clickN==2){
+                Sscene5.SetActive(false);
+                SceneManager.LoadScene("Game12_Calendar");
+            }
+        }else if(SceneManager.GetActiveScene().name=="S5_StoryScene"){
+            if(clickN==1){
+                Sscene6.SetActive(false);
+                Sscene7.SetActive(true);
+            }else if(clickN==2){
+                Sscene7.SetActive(false);
+                Sscene8.SetActive(true);
+                //언니들 옷 활성화
+                PlayerPrefs.SetInt("sister", 10);
+                Debug.Log(PlayerPrefs.HasKey("sister"));
             }
         }
     }

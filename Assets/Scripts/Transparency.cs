@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Transparency : MonoBehaviour
 {
@@ -57,6 +58,14 @@ public class Transparency : MonoBehaviour
             color.a = 0.4f;
         }else{
             color.a = 0f;
+            //1초 기다렸다가 다음 신으로 이동하기
+            StartCoroutine(WaitAndLoadScene()); 
+            IEnumerator WaitAndLoadScene()
+            {
+            yield return new WaitForSeconds(1.0f);
+
+            SceneManager.LoadScene("W2_StoryScene");//신 변경
+            }
         }
         goImg.GetComponent<Image>().color = color;
     }
