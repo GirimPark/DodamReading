@@ -8,9 +8,9 @@ public class ClothVoid : MonoBehaviour
 {
     public GameObject cloth1, cloth2, cloth3, cloth4; //캐릭터 옷 목록
     public Sprite change_img1, change_img2, change_img3, change_img4, player_img;//변경할 이미지 
-    bool isMermaid, isTrue;//동화구연에서 넘어왓는지 
+    bool isMermaid, isTrue, isSister;//동화구연에서 넘어왓는지 
     Image thisImg; //현재 이미지
-    int trueCount;
+    int trueCount, trueCountS;
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +33,12 @@ public class ClothVoid : MonoBehaviour
                 isMermaid=true;
                 PlayerPrefs.DeleteKey("mermaid");
             }
+        }else if(PlayerPrefs.HasKey("sister")==true){
+            trueCountS++;
+            if(trueCountS>=1){
+                isSister=true;
+                PlayerPrefs.DeleteKey("sister");
+            }
         }
         thisImg = GetComponent<Image>();
     }
@@ -47,6 +53,8 @@ public class ClothVoid : MonoBehaviour
             //cloth2.SetActive(true);
             //cloth3.SetActive(true);
             cloth4.SetActive(true);
+        }else if(isSister==true){
+            cloth2.SetActive(true);
         }
         if(Input.GetMouseButtonDown(0)){//마우스 클릭시
             Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
