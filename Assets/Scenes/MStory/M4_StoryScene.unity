@@ -787,8 +787,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4279834905
-  m_fontColor: {r: 0.09803922, g: 0.09803922, b: 0.09803922, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -880,17 +880,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 638958427}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: 0.3254854, w: 0.9455471}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 7, y: 7, z: 0.99954}
   m_Children: []
   m_Father: {fileID: 1446058409}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 37.99}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 200, y: -330}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -38.69, y: -167.44}
+  m_SizeDelta: {x: 109.04, y: 109.04}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &638958429
 MonoBehaviour:
@@ -991,6 +991,14 @@ MonoBehaviour:
   scene8: {fileID: 0}
   scene9: {fileID: 1446058408}
   scene10: {fileID: 1572806476}
+  Sscene1: {fileID: 0}
+  Sscene2: {fileID: 0}
+  Sscene3: {fileID: 0}
+  Sscene4: {fileID: 0}
+  Sscene5: {fileID: 0}
+  Sscene6: {fileID: 0}
+  Sscene7: {fileID: 0}
+  Sscene8: {fileID: 0}
 --- !u!58 &685445118
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1426,7 +1434,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "\uC778\uC5B4\uACF5\uC8FC\uB294 \uC0AC\uB77C\uC9C8 \uB9C8\uC74C\uC758 \uC900\uBE44\uB97C
-    \uB9C8\uCE58\uACE0 \uBC14\uB2F7\uC18D\uC73C\uB85C \uB6F0\uC5B4\uB4E4\uC5C8\uC5B4\uC694."
+    \uB9C8\uCE58\uACE0\n\n\uBC14\uB2F7\uC18D\uC73C\uB85C \uB6F0\uC5B4\uB4E4\uC5C8\uC5B4\uC694."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8562eee989fda0b4c96b23a74ae496d8, type: 2}
   m_sharedMaterial: {fileID: 572321017470597624, guid: 8562eee989fda0b4c96b23a74ae496d8,
@@ -1436,8 +1444,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4279834905
-  m_fontColor: {r: 0.09803922, g: 0.09803922, b: 0.09803922, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1686,7 +1694,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5f33fdd5323d592489673d60ec1d2f87, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4b19898fce02b904997321f0d4075b1a, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
