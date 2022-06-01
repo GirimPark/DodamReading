@@ -193,7 +193,12 @@ public class OnOffWind : MonoBehaviour, IPointerClickHandler
             }
             else if (clickN == 3)
             {
-             //   scene3.SetActive(false);
+                scene3.SetActive(false);
+                scene4.SetActive(true);
+            }
+            else if (clickN == 4)
+            {
+                //   scene3.SetActive(false);
                 SceneManager.LoadScene("Game7FindPricess");
             }
         }
@@ -219,10 +224,17 @@ public class OnOffWind : MonoBehaviour, IPointerClickHandler
         {
             if (clickN == 1)
             {
-               // scene7.SetActive(false);
+                scene7.SetActive(false);
+                scene8.SetActive(true);
+
+            }
+            else if (clickN == 2)
+            {
+
+                // scene7.SetActive(false);
                 SceneManager.LoadScene("Game9_findLetter");
             }
-          
+
         }
         else if (SceneManager.GetActiveScene().name == "P4_StoryScene")
         {
