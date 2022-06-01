@@ -184,6 +184,14 @@ MonoBehaviour:
   scene8: {fileID: 0}
   scene9: {fileID: 0}
   scene10: {fileID: 0}
+  Sscene1: {fileID: 0}
+  Sscene2: {fileID: 0}
+  Sscene3: {fileID: 0}
+  Sscene4: {fileID: 0}
+  Sscene5: {fileID: 0}
+  Sscene6: {fileID: 0}
+  Sscene7: {fileID: 0}
+  Sscene8: {fileID: 0}
 --- !u!58 &14325657
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2270,7 +2278,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -500}
+  m_AnchoredPosition: {x: 0, y: -430}
   m_SizeDelta: {x: 2000, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!61 &1867000112

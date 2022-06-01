@@ -25,7 +25,7 @@ public class ChangeText : MonoBehaviour
         isArriveTrue = GameObject.Find("princess").GetComponent<AvoidObstacle>().isArriveTrue;
 
         if(isArriveTrue == true){
-            textArrive.text = "다음 게임으로 넘어가겠습니다.";//텍스트 변경
+            textArrive.text = "잘했어요!";//텍스트 변경
             textArrive.color = Color.blue;//텍스트 색상 변경
             //1초 기다렸다가 다음 신으로 이동하기
             StartCoroutine(WaitAndLoadScene()); 

@@ -40,7 +40,7 @@ public class LoadOtherScene : MonoBehaviour
                 }
                 else if (click_obj.name == "book1")
                 {//인어공주 책 클릭
-                    SceneManager.LoadScene("M1_StoryScene");
+                    SceneManager.LoadScene("CharacterChoiceScene");
                 }
                 else if (click_obj.name == "book1")
                 {//인어공주 독후감 클릭

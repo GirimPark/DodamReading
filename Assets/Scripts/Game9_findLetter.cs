@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Game9_findLetter : MonoBehaviour
 {
-    GameObject bed;
+    GameObject drawer;
     GameObject window;
-    GameObject drawer; 
+    GameObject desk;
     GameObject letter;
     GameObject text;
 
@@ -14,14 +15,14 @@ public class Game9_findLetter : MonoBehaviour
     
     void Start()
     {
-        bed = GameObject.Find("침대");
-        window = GameObject.Find("창문");
         drawer = GameObject.Find("서랍장");
-        letter = drawer.transform.GetChild(1).gameObject;
+        window = GameObject.Find("창문");
+        desk = GameObject.Find("책상");
+        letter = desk.transform.GetChild(1).gameObject;
         text = GameObject.Find("말풍선");
 
         GetComponent<SpriteRenderer>().enabled = true;
-        transform.position = bed.transform.position;
+        transform.position = drawer.transform.position;
         where = 1;
     }
 
@@ -41,44 +42,35 @@ public class Game9_findLetter : MonoBehaviour
         switch (where)
         {
             case 1:
-                bed.transform.GetChild(0).gameObject.SetActive(true);
+                drawer.transform.GetChild(0).gameObject.SetActive(true);
                 transform.position = window.transform.position;
-                Invoke("Invisible", 1);
+                
+                where++;
                 break;
             case 2:
                 window.transform.GetChild(0).gameObject.SetActive(true);
-                transform.position = drawer.transform.position;
-                Invoke("Invisible", 1);
+                transform.position = desk.transform.position;
+
+                where++;
                 break;
             case 3:
-                drawer.transform.GetChild(0).gameObject.SetActive(true);
+                desk.transform.GetChild(0).gameObject.SetActive(true);
                 GetComponent<SpriteRenderer>().enabled = false;
                 letter.GetComponent<SpriteRenderer>().enabled = true;
                 text.transform.GetChild(0).gameObject.SetActive(false);
                 text.transform.GetChild(1).gameObject.SetActive(true);
-                Invoke("Invisible", 1);
+
+                where++;
+                StartCoroutine(WaitAndLoadScene());
                 break;
         }
     }
 
 
-    private void Invisible()
+    IEnumerator WaitAndLoadScene()
     {
-        Debug.Log("Invisible() 호출됐음 & " + where);
-        switch (where)
-        {
-            case 1:
-                bed.transform.GetChild(0).gameObject.SetActive(false);
-                where++;
-                break;
-            case 2:
-                window.transform.GetChild(0).gameObject.SetActive(false);
-                where++;
-                break;
-            case 3:
-                drawer.transform.GetChild(0).gameObject.SetActive(false);
-                where++;
-                break;
-        }
+        yield return new WaitForSeconds(1.0f);
+
+        SceneManager.LoadScene("P4_StoryScene");
     }
 }

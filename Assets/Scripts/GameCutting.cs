@@ -40,7 +40,7 @@ public class GameCutting : MonoBehaviour
                         //princess1.transform.localScale = new Vector2(5,6);//크기 맞춰주기
                         princess1.GetComponent<Image>().sprite = change_img1;
                     }else{
-                        princess1.transform.localScale = new Vector2(7,8);//크기 맞춰주기
+                        //princess1.transform.localScale = new Vector2(7,8);//크기 맞춰주기
                         princess1.GetComponent<Image>().sprite = change_img11;
                         scissors1.SetActive(false);
                         scissors2.SetActive(true);
@@ -56,7 +56,7 @@ public class GameCutting : MonoBehaviour
                         //princess2.transform.localScale = new Vector2(4,6);//크기 맞춰주기
                         princess2.GetComponent<Image>().sprite = change_img2;
                     }else if(clickP2>1&&clickP1>1){
-                        princess2.transform.localScale = new Vector2(8,8);//크기 맞춰주기
+                        //princess2.transform.localScale = new Vector2(8,8);//크기 맞춰주기
                         princess2.GetComponent<Image>().sprite = change_img22;
                         scissors2.SetActive(false);
                         scissors3.SetActive(true);
@@ -71,7 +71,7 @@ public class GameCutting : MonoBehaviour
                         //princess3.transform.localScale = new Vector2(3,6);//크기 맞춰주기
                         princess3.GetComponent<Image>().sprite = change_img3;
                     }else if(clickP3>1&&clickP1>1&&clickP2>1){
-                        princess3.transform.localScale = new Vector2(6,8);//크기 맞춰주기
+                        //princess3.transform.localScale = new Vector2(6,8);//크기 맞춰주기
                         princess3.GetComponent<Image>().sprite = change_img33;
                         //1초 기다렸다가 다음 신으로 이동하기
                         StartCoroutine(WaitAndLoadScene()); 

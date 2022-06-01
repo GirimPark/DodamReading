@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class ChangeText2 : MonoBehaviour
 {
@@ -22,11 +23,22 @@ public class ChangeText2 : MonoBehaviour
         clickNum = GameObject.Find("prince").GetComponent<GameFindPrinc>().clickNum;//클릭 횟수
 
         if(isPrincess == true){
-            textArrive.text = "정답입니다.";//텍스트 변경
-            textArrive.color = Color.blue;//텍스트 색상 변경
+            StartCoroutine(WaitAndLoadScene());
+            
         }else if(isPrincess == false && clickNum>0){
             textArrive.text = "다시 찾아주세요.";//텍스트 변경
             textArrive.color = Color.red;//텍스트 색상 변경
         }
+    }
+
+
+    IEnumerator WaitAndLoadScene()
+    {
+        textArrive.text = "잘했어요!";//텍스트 변경
+        textArrive.color = Color.blue;//텍스트 색상 변경
+
+        yield return new WaitForSeconds(1.0f);
+
+        SceneManager.LoadScene("P2_StoryScene");
     }
 }
