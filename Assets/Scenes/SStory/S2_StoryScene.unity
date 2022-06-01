@@ -1294,9 +1294,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uD558\uC9C0\uB9CC \uD638\uAE30\uC2EC\uC774 \uB9CE\uC558\uB358 \uC778\uC5B4\uACF5\uC8FC\uB294\n\n
-    \uC5B8\uB2C8\uB4E4\uC758 \uB9D0\uC744 \uB4E3\uC9C0 \uC54A\uACE0 \uBB3C \uBC16\uC73C\uB85C
-    \uB098\uAC14\uC5B4\uC694."
+  m_text: "\uD558\uC9C0\uB9CC \uD638\uAE30\uC2EC\uC774 \uB9CE\uC558\uB358 \uC778\uC5B4\uACF5\uC8FC\uB294\n\n\uC5B8\uB2C8\uB4E4\uC758
+    \uB9D0\uC744 \uB4E3\uC9C0 \uC54A\uACE0 \uBB3C \uBC16\uC73C\uB85C \uB098\uAC14\uC5B4\uC694."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8562eee989fda0b4c96b23a74ae496d8, type: 2}
   m_sharedMaterial: {fileID: 572321017470597624, guid: 8562eee989fda0b4c96b23a74ae496d8,
@@ -1836,10 +1835,10 @@ MonoBehaviour:
   m_text: "\uC5B8\uB2C8\uB4E4\uC740 \uC778\uC5B4\uACF5\uC8FC\uAC00 \uBB3C \uBC16\uC5D0\uC11C
     \uCC98\uC74C \uB9CC\uB09C \uB0A8\uC790\uB97C \n\uC0AC\uB791\uD558\uAC8C \uB418\uC5C8\uB2E4\uB294
     \uAC83\uC744 \uC54C\uAC8C \uB418\uC5C8\uC5B4\uC694.\n\n\uAC71\uC815\uC2A4\uB7FD\uAC8C
-    \uC778\uC5B4\uACF5\uC8FC\uB97C \uC9C0\uCF1C\uBCF4\uB358 \uC5B4\uB290 \uB0A0,\n
-    \uAC11\uC790\uAE30 \uC778\uC5B4\uACF5\uC8FC\uAC00 \uBC14\uB2F7\uC18D\uC5D0\uC11C
-    \uC0AC\uB77C\uC84C\uC5B4\uC694.\n\n\uC5B8\uB2C8\uB4E4\uC740 \uC778\uC5B4\uACF5\uC8FC\uB97C
-    \uCC3E\uC544\uC11C \uC628 \uBC14\uB2F7\uC18D\uC744 \uD5E4\uB9E4\uACE0 \uB2E4\uB154\uC5B4\uC694."
+    \uC778\uC5B4\uACF5\uC8FC\uB97C \uC9C0\uCF1C\uBCF4\uB358 \uC5B4\uB290 \uB0A0,\n\uAC11\uC790\uAE30
+    \uC778\uC5B4\uACF5\uC8FC\uAC00 \uBC14\uB2F7\uC18D\uC5D0\uC11C \uC0AC\uB77C\uC84C\uC5B4\uC694.\n\n\uC5B8\uB2C8\uB4E4\uC740
+    \uC778\uC5B4\uACF5\uC8FC\uB97C \uCC3E\uC544\uC11C \uC628 \uBC14\uB2F7\uC18D\uC744
+    \uD5E4\uB9E4\uACE0 \uB2E4\uB154\uC5B4\uC694."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8562eee989fda0b4c96b23a74ae496d8, type: 2}
   m_sharedMaterial: {fileID: 572321017470597624, guid: 8562eee989fda0b4c96b23a74ae496d8,
@@ -2568,7 +2567,6 @@ RectTransform:
   - {fileID: 1880337057}
   - {fileID: 1079452950}
   - {fileID: 172139896}
-  - {fileID: 1984486655}
   m_Father: {fileID: 1830226567}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3017,81 +3015,6 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1889814810}
-  m_CullTransparentMesh: 1
---- !u!1 &1984486654
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1984486655}
-  - component: {fileID: 1984486657}
-  - component: {fileID: 1984486656}
-  m_Layer: 5
-  m_Name: mermaid
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1984486655
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1984486654}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 6, y: 6, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1587656330}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -50, y: -150}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1984486656
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1984486654}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0a682c527d4894559924400d826c021d, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 1
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1984486657
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1984486654}
   m_CullTransparentMesh: 1
 --- !u!1 &2027866264
 GameObject:
