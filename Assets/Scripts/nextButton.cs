@@ -33,6 +33,11 @@ public class nextButton : MonoBehaviour
 
         if (thisScene.tag == "Finish")
         {
+            if(game.Substring(0,7) == "Writing")
+            {
+                PlayerPrefs.SetInt("witch", 10);
+                Debug.Log(PlayerPrefs.HasKey("prince"));
+            }
             SceneManager.LoadScene(game);
         }
 

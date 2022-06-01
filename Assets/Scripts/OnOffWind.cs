@@ -173,10 +173,15 @@ public class OnOffWind : MonoBehaviour, IPointerClickHandler
             else if (clickN == 2)
             {
                 Sscene7.SetActive(false);
-                Sscene8.SetActive(true);
+                Sscene8.SetActive(true);  
+            }
+            else if (clickN == 3)
+            {
                 //언니들 옷 활성화
                 PlayerPrefs.SetInt("sister", 10);
                 Debug.Log(PlayerPrefs.HasKey("sister"));
+
+                SceneManager.LoadScene("WritingReportScene_S");
             }
         }
         else if (SceneManager.GetActiveScene().name == "P1_StoryScene")
@@ -247,8 +252,9 @@ public class OnOffWind : MonoBehaviour, IPointerClickHandler
             else if (clickN == 2)
             {
                 //왕자 옷 활성화
-                //  PlayerPrefs.SetInt("prince", 10);
-                // Debug.Log(PlayerPrefs.HasKey("prince"));
+                PlayerPrefs.SetInt("prince", 10);
+                Debug.Log(PlayerPrefs.HasKey("prince"));
+                SceneManager.LoadScene("WritingReportScene_P");
             }
 
         }
