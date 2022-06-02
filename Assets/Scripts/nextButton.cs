@@ -37,6 +37,7 @@ public class nextButton : MonoBehaviour
             {
                 PlayerPrefs.SetInt("witch", 10);
             }
+            thisScene.SetActive(false);
             SceneManager.LoadScene(game);
         }
 
