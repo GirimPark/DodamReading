@@ -1428,7 +1428,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 277cde11115e2bd42a9e2cee8cf75d04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scene1: {fileID: 0}
+  scene1: {fileID: 269674480}
   scene2: {fileID: 0}
   scene3: {fileID: 0}
   scene4: {fileID: 0}
@@ -1438,14 +1438,6 @@ MonoBehaviour:
   scene8: {fileID: 0}
   scene9: {fileID: 0}
   scene10: {fileID: 0}
-  Sscene1: {fileID: 269674480}
-  Sscene2: {fileID: 0}
-  Sscene3: {fileID: 0}
-  Sscene4: {fileID: 0}
-  Sscene5: {fileID: 0}
-  Sscene6: {fileID: 0}
-  Sscene7: {fileID: 0}
-  Sscene8: {fileID: 0}
 --- !u!58 &1989498278
 CircleCollider2D:
   m_ObjectHideFlags: 0

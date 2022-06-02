@@ -14,15 +14,12 @@ public class OnOffWind : MonoBehaviour, IPointerClickHandler
     public GameObject scene4, scene5;//신456
     public GameObject scene6, scene7, scene8, scene9;//신6789
     public GameObject scene10;//신10
-    //언니들 신
-    public GameObject Sscene1, Sscene2, Sscene3, Sscene4, Sscene5, Sscene6, Sscene7, Sscene8;
 
     string scene = "WritingReportScene_";
     int clickN=0;
     public void OnPointerClick(PointerEventData eventData)
     {
         Debug.Log("OnOffWind 실행중");
-
         /*for(int i = 0; i < On.Length; i++)
         {
             On[i].SetActive(true);
@@ -40,7 +37,7 @@ public class OnOffWind : MonoBehaviour, IPointerClickHandler
         
     }
     void Start(){
-        PlayerPrefs.DeleteKey("mermaid");
+        //PlayerPrefs.DeleteKey("mermaid");
     }
     void Update(){
         if (SceneManager.GetActiveScene().name == "M1_StoryScene")
@@ -54,10 +51,14 @@ public class OnOffWind : MonoBehaviour, IPointerClickHandler
             {
                 scene2.SetActive(false);
                 scene3.SetActive(true);
-            }
-            else if (clickN == 3)
+            }else if (clickN == 3)
             {
                 scene3.SetActive(false);
+                scene4.SetActive(true);
+            }
+            else if (clickN == 4)
+            {
+                scene4.SetActive(false);
                 SceneManager.LoadScene("Game1_Obstacle");
             }
         }
@@ -72,10 +73,14 @@ public class OnOffWind : MonoBehaviour, IPointerClickHandler
             {
                 scene4.SetActive(false);
                 scene5.SetActive(true);
-            }
-            else if (clickN == 3)
+            }else if (clickN == 3)
             {
                 scene5.SetActive(false);
+                scene6.SetActive(true);
+            }
+            else if (clickN == 4)
+            {
+                scene6.SetActive(false);
                 SceneManager.LoadScene("Game2_HJ");
             }
         }
@@ -113,8 +118,7 @@ public class OnOffWind : MonoBehaviour, IPointerClickHandler
             {
                 scene10.SetActive(false);
                 //인어공주 옷 활성화
-                PlayerPrefs.SetInt("mermaid", 10);
-                Debug.Log(PlayerPrefs.HasKey("mermaid"));
+                PlayerPrefs.SetInt("mermaid", 20);
                 scene = scene + SceneManager.GetActiveScene().name[0];
                 SceneManager.LoadScene(scene);
             }
@@ -123,7 +127,7 @@ public class OnOffWind : MonoBehaviour, IPointerClickHandler
         {//인어공주 언니들 신
             if (clickN == 1)
             {
-                Sscene1.SetActive(false);
+                scene1.SetActive(false);
                 SceneManager.LoadScene("Game10_OX");
             }
         }
@@ -131,22 +135,26 @@ public class OnOffWind : MonoBehaviour, IPointerClickHandler
         {
             if (clickN == 1)
             {
-                Sscene1.SetActive(false);
-                Sscene2.SetActive(true);
+                scene1.SetActive(false);
+                scene2.SetActive(true);
             }
             else if (clickN == 2)
             {
-                Sscene2.SetActive(false);
-                Sscene3.SetActive(true);
-            }
-            else if (clickN == 3)
+                scene2.SetActive(false);
+                scene3.SetActive(true);
+            }else if (clickN == 3)
             {
-                Sscene3.SetActive(false);
-                Sscene4.SetActive(true);
+                scene3.SetActive(false);
+                scene4.SetActive(true);
             }
             else if (clickN == 4)
             {
-                Sscene4.SetActive(false);
+                scene4.SetActive(false);
+                scene5.SetActive(true);
+            }
+            else if (clickN == 5)
+            {
+                scene5.SetActive(false);
                 SceneManager.LoadScene("Game11Cutting");
             }
         }
@@ -154,12 +162,12 @@ public class OnOffWind : MonoBehaviour, IPointerClickHandler
         {
             if (clickN == 1)
             {
-                Sscene4.SetActive(false);
-                Sscene5.SetActive(true);
+                scene4.SetActive(false);
+                scene5.SetActive(true);
             }
             else if (clickN == 2)
             {
-                Sscene5.SetActive(false);
+                scene5.SetActive(false);
                 SceneManager.LoadScene("Game12_Calendar");
             }
         }
@@ -167,19 +175,18 @@ public class OnOffWind : MonoBehaviour, IPointerClickHandler
         {
             if (clickN == 1)
             {
-                Sscene6.SetActive(false);
-                Sscene7.SetActive(true);
+                scene6.SetActive(false);
+                scene7.SetActive(true);
             }
             else if (clickN == 2)
             {
-                Sscene7.SetActive(false);
-                Sscene8.SetActive(true);  
+                scene7.SetActive(false);
+                scene8.SetActive(true);  
             }
             else if (clickN == 3)
             {
                 //언니들 옷 활성화
-                PlayerPrefs.SetInt("sister", 10);
-                Debug.Log(PlayerPrefs.HasKey("sister"));
+                PlayerPrefs.SetInt("sister", 30);
 
                 SceneManager.LoadScene("WritingReportScene_S");
             }
@@ -252,8 +259,7 @@ public class OnOffWind : MonoBehaviour, IPointerClickHandler
             else if (clickN == 2)
             {
                 //왕자 옷 활성화
-                PlayerPrefs.SetInt("prince", 10);
-                Debug.Log(PlayerPrefs.HasKey("prince"));
+                PlayerPrefs.SetInt("prince", 40);
                 SceneManager.LoadScene("WritingReportScene_P");
             }
 
