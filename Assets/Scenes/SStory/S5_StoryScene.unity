@@ -1860,6 +1860,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5096072382509197591, guid: 028e2681f4baed64191f77a1791f2f02,
         type: 3}
+      propertyPath: scene6
+      value: 
+      objectReference: {fileID: 1516078898}
+    - target: {fileID: 5096072382509197591, guid: 028e2681f4baed64191f77a1791f2f02,
+        type: 3}
+      propertyPath: scene7
+      value: 
+      objectReference: {fileID: 700985752}
+    - target: {fileID: 5096072382509197591, guid: 028e2681f4baed64191f77a1791f2f02,
+        type: 3}
+      propertyPath: scene8
+      value: 
+      objectReference: {fileID: 864296780}
+    - target: {fileID: 5096072382509197591, guid: 028e2681f4baed64191f77a1791f2f02,
+        type: 3}
       propertyPath: Sscene4
       value: 
       objectReference: {fileID: 0}

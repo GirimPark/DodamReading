@@ -8,37 +8,31 @@ public class ClothVoid : MonoBehaviour
 {
     public GameObject cloth1, cloth2, cloth3, cloth4; //캐릭터 옷 목록
     public Sprite change_img1, change_img2, change_img3, change_img4, player_img;//변경할 이미지 
-    bool isMermaid, isTrue, isSister;//동화구연에서 넘어왓는지 
+    bool isMermaid, isTrue, isSister, isWitch, isPrince;//동화구연에서 넘어왓는지 
     Image thisImg; //현재 이미지
-    int trueCount, trueCountS;
+    int trueCount, trueCountS, trueCountP,trueCountW;
 
     // Start is called before the first frame update
     void Start()
     {
-        /*if((object)GameObject.Find("changeO").GetComponent<FairyVoid>().closetTF!=null){
-            isFairy=true;
-        }else{
-            isFairy=false;
+        /*if(PlayerPrefs.HasKey("mermaid")){//인어공주
+            isMermaid=true;
+        }if(PlayerPrefs.HasKey("sister")){//인어공주 언니
+            isSister=true;
+        }if(PlayerPrefs.HasKey("witch")){//마녀
+            isWitch=true;
+        }if(PlayerPrefs.HasKey("prince")){//왕자
+            isPrince=true;
         }*/
-        /*if(SceneManager.GetActiveScene().name=="ClosetScene"){
-            PlayerPrefs.DeleteKey("key");
-        }else if(SceneManager.GetActiveScene().name=="FairyStoryScene"){
-            PlayerPrefs.SetInt("key", 10);
-        }*/
-        //PlayerPrefs.DeleteAll();
         //옷장씬 갔다와야지만 isFairy 활성화 되도록
-        if(PlayerPrefs.HasKey("mermaid")==true){
-            trueCount++;
-            if(trueCount>=1){
-                isMermaid=true;
-                PlayerPrefs.DeleteKey("mermaid");
-            }
-        }else if(PlayerPrefs.HasKey("sister")==true){
-            trueCountS++;
-            if(trueCountS>=1){
-                isSister=true;
-                PlayerPrefs.DeleteKey("sister");
-            }
+        if(PlayerPrefs.HasKey("mermaid")){//인어공주
+            isMermaid=true;
+        }if(PlayerPrefs.HasKey("sister")){//인어공주 언니
+            isSister=true;
+        }if(PlayerPrefs.HasKey("witch")){//마녀
+            isWitch=true;
+        }if(PlayerPrefs.HasKey("prince")){//왕자
+            isPrince=true;
         }
         thisImg = GetComponent<Image>();
     }
@@ -46,15 +40,21 @@ public class ClothVoid : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log("공주:"+isMermaid);
+        Debug.Log("왕자:"+isPrince);
+        Debug.Log("마녀:"+isWitch);
+        Debug.Log("언니:"+isSister);
         //동화 구연에서 값이 넘어왔다면
         if(isMermaid == true){
-            //옷 목록 보여주기
-            //cloth1.SetActive(true);
-            //cloth2.SetActive(true);
-            //cloth3.SetActive(true);
             cloth4.SetActive(true);
-        }else if(isSister==true){
+        }if(isSister==true){
+            Debug.Log("공주공주");
             cloth2.SetActive(true);
+        }if(isWitch==true){
+            cloth1.SetActive(true);
+        }if(isPrince==true){
+            cloth3.SetActive(true);
+            Debug.Log("오아자왕자");
         }
         if(Input.GetMouseButtonDown(0)){//마우스 클릭시
             Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
