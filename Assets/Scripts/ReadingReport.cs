@@ -5,12 +5,21 @@ using UnityEngine.SceneManagement;
 
 public class ReadingReport : MonoBehaviour
 {
+   
+    GameObject exit;
+
     SpriteRenderer spriteR;
     Sprite[] sprites;
     int num = 0;
 
     void Start()
     {
+       /* PlayerPrefs.DeleteKey("mermaid");
+        PlayerPrefs.DeleteKey("sister");
+        PlayerPrefs.DeleteKey("prince");
+        PlayerPrefs.DeleteKey("witch");*/
+
+        exit = GameObject.Find("exit").transform.GetChild(0).gameObject;
         spriteR = this.GetComponent<SpriteRenderer>();
         sprites = Resources.LoadAll<Sprite>("Reports");
 
@@ -47,10 +56,12 @@ public class ReadingReport : MonoBehaviour
 
     private void OnMouseDown()
     {
+        exit.SetActive(true);
         Debug.Log(num);
         if (num < sprites.Length)
         {
             spriteR.sprite = sprites[num++];
+            exit.SetActive(true);
         }
         else
         {
@@ -65,6 +76,8 @@ public class ReadingReport : MonoBehaviour
                 texture.LoadImage(imgBytes);
                 Rect rect = new Rect(0, 0, texture.width, texture.height);
                 GetComponent<SpriteRenderer>().sprite = Sprite.Create(texture, rect, new Vector2(0.5f, 0.5f));
+
+                exit.SetActive(true);
             }
             
         }

@@ -54,12 +54,12 @@ public class MouseEvent : MonoBehaviour
         if (isDragged==true){
             dragN++;
             Debug.Log("드래그 횟수:"+dragN);
-        }
+        } 
         //드래그 횟수 500 넘으면 이미지 바꿔주기
-        if (dragN<500){
-            slider.value = (dragN/5);
+        if (dragN<150){
+            slider.value = (dragN/1.5f);
         }
-        else if(dragN>500){
+        else if(dragN>150){
             transform.localScale = new Vector2(5,5);//크기 맞춰주기
             this_img.sprite=change_img;
             slider.value = 100;

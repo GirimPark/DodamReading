@@ -119,8 +119,8 @@ public class OnOffWind : MonoBehaviour, IPointerClickHandler
                 scene10.SetActive(false);
                 //인어공주 옷 활성화
                 PlayerPrefs.SetInt("mermaid", 20);
-                scene = scene + SceneManager.GetActiveScene().name[0];
-                SceneManager.LoadScene(scene);
+                //scene = scene + SceneManager.GetActiveScene().name[0];
+                SceneManager.LoadScene("WritingReportScene_M");
             }
         }
         else if (SceneManager.GetActiveScene().name == "S1_StoryScene")
@@ -187,7 +187,7 @@ public class OnOffWind : MonoBehaviour, IPointerClickHandler
             {
                 //언니들 옷 활성화
                 PlayerPrefs.SetInt("sister", 30);
-
+                scene8.SetActive(false);
                 SceneManager.LoadScene("WritingReportScene_S");
             }
         }
@@ -228,7 +228,7 @@ public class OnOffWind : MonoBehaviour, IPointerClickHandler
             }
             else if (clickN == 3)
             {
-              //  scene7.SetActive(false);
+                scene6.SetActive(false);
                 SceneManager.LoadScene("game8_heart");
             }
         }
@@ -258,6 +258,7 @@ public class OnOffWind : MonoBehaviour, IPointerClickHandler
             }
             else if (clickN == 2)
             {
+                scene9.SetActive(false);
                 //왕자 옷 활성화
                 PlayerPrefs.SetInt("prince", 40);
                 SceneManager.LoadScene("WritingReportScene_P");

@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MainLibraryScene.unity
+    guid: 30f65c5ff2276433c8818c091de7a90a
+  - enabled: 1
     path: Assets/Scenes/WritingReportScene_M.unity
     guid: 8ac4517bb44f80e459c945d7fdc67032
   - enabled: 1
@@ -59,9 +62,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Game/Game10_OX.unity
     guid: 740f515a9008a4a19b363ed65e862d21
-  - enabled: 1
-    path: Assets/Scenes/MainLibraryScene.unity
-    guid: 30f65c5ff2276433c8818c091de7a90a
   - enabled: 1
     path: Assets/Scenes/SettingScene.unity
     guid: c0ddc9d2d28131046b536a71607ca571
