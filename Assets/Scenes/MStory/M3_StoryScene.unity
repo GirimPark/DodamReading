@@ -605,7 +605,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0f69581c0187049b4be4ec59979f4217, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 81725c8d3ee36486f9a2c43deb3ddab9, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1638,14 +1638,6 @@ MonoBehaviour:
   scene8: {fileID: 655142964}
   scene9: {fileID: 1560161934}
   scene10: {fileID: 0}
-  Sscene1: {fileID: 0}
-  Sscene2: {fileID: 0}
-  Sscene3: {fileID: 0}
-  Sscene4: {fileID: 0}
-  Sscene5: {fileID: 0}
-  Sscene6: {fileID: 0}
-  Sscene7: {fileID: 0}
-  Sscene8: {fileID: 0}
 --- !u!58 &1217485685
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2366,7 +2358,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a92fac590f40e431b9fbdbae8cb09b2b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b6b2f08742d9e4fc8b87b96e0465b6d0, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -2441,7 +2433,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d4687c10271c4403484bde14858804fa, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 64c5d330e5161447abe01da43dcb5ac1, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
