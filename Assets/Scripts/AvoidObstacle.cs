@@ -67,13 +67,13 @@ public class AvoidObstacle : MonoBehaviour
                 GameObject click_obj = hit.transform.gameObject;
                 Debug.Log(click_obj.name);
                 if(click_obj.name=="up"){//위쪽으로 이동하기
-                    transform.position += new Vector3(0.0f, 0.02f, 0.0f);
+                    transform.position += new Vector3(0.0f, 0.09f, 0.0f);
                 }else if(click_obj.name=="down"){//아래로 이동하기
-                    transform.position += new Vector3(0.0f, -0.02f, 0.0f);
+                    transform.position += new Vector3(0.0f, -0.09f, 0.0f);
                 }else if(click_obj.name=="left"){//왼쪽으로 이동하기
-                    transform.position += new Vector3(-0.02f, 0.0f, 0.0f);
+                    transform.position += new Vector3(-0.09f, 0.0f, 0.0f);
                 }else if(click_obj.name=="right"){//오른쪽으로 이동하기
-                    transform.position += new Vector3(0.02f, 0.0f, 0.0f);
+                    transform.position += new Vector3(0.09f, 0.0f, 0.0f);
                 }
             }
         }

@@ -48,13 +48,13 @@ public class Transparency : MonoBehaviour
         //이미지 투명도 조절
         GameObject goImg = GameObject.Find("Canvas/marble");
         Color color = goImg.GetComponent<Image>().color;
-        if(0<=dragN && dragN<100){
+        if(0<=dragN && dragN<50){
             color.a=1.0f;
-        }else if(100<=dragN && dragN<200){
+        }else if(50<=dragN && dragN<90){
             color.a=0.8f;
-        }else if(200<=dragN && dragN<300){
+        }else if(90<=dragN && dragN<110){
             color.a=0.6f;
-        }else if(300<=dragN && dragN<400){
+        }else if(110<=dragN && dragN<150){
             color.a = 0.4f;
         }else{
             color.a = 0f;
