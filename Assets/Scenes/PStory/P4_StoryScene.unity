@@ -498,14 +498,6 @@ MonoBehaviour:
   scene8: {fileID: 477682768}
   scene9: {fileID: 845274600}
   scene10: {fileID: 0}
-  Sscene1: {fileID: 0}
-  Sscene2: {fileID: 0}
-  Sscene3: {fileID: 0}
-  Sscene4: {fileID: 0}
-  Sscene5: {fileID: 0}
-  Sscene6: {fileID: 0}
-  Sscene7: {fileID: 0}
-  Sscene8: {fileID: 0}
 --- !u!58 &168379106
 CircleCollider2D:
   m_ObjectHideFlags: 0
