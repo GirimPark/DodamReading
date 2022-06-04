@@ -1,20 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class nextButton : MonoBehaviour
 {
-    public GameObject thisScene;
-    public GameObject Lastm1Scene;
+    GameObject thisScene;
     GameObject nextScene;
     public string game;
-    int tagNum;
+    int sceneNum;
 
     void Start()
     {
-        tagNum = 0;
+        sceneNum = 0;
+
+        thisScene = GameObject.Find("scene").transform.GetChild(sceneNum).gameObject;
         thisScene.SetActive(true);
+        sceneNum++;
     }
 
 
@@ -29,37 +29,37 @@ public class nextButton : MonoBehaviour
 
     private void OnMouseDown()
     {
-        tagNum++;
-
+        //  마지막 씬인 경우 다음 게임/독후감으로 넘어가기
         if (thisScene.tag == "Finish")
         {
-            if(game.Substring(0,7) == "Writing")
+            if(game == "WritingReportScene_W")
             {
                 PlayerPrefs.SetInt("witch", 10);
             }
+            else if (game == "WritingReportScene_M")
+            {
+                PlayerPrefs.SetInt("mermaid", 20);
+            }
+            else if (game == "WritingReportScene_S")
+            {
+                PlayerPrefs.SetInt("sister", 30);
+            }
+            else if (game == "WritingReportScene_P")
+            {
+                PlayerPrefs.SetInt("prince", 40);
+            }
+
             thisScene.SetActive(false);
             SceneManager.LoadScene(game);
         }
 
-        if (thisScene == Lastm1Scene)
-        {
-            nextScene = GameObject.FindGameObjectWithTag("Finish").transform.GetChild(0).gameObject;
-            Debug.Log(nextScene.name);
+        //  씬 넘기기
+        nextScene = GameObject.Find("scene").transform.GetChild(sceneNum).gameObject;
+        sceneNum++;
 
-            thisScene.SetActive(false);
-            nextScene.SetActive(true);
-            thisScene = nextScene;
-            nextScene = null;
-        }
-        else
-        {
-            nextScene = GameObject.FindGameObjectWithTag(tagNum.ToString()).transform.GetChild(0).gameObject;
-            Debug.Log(nextScene.name);
-
-            thisScene.SetActive(false);
-            nextScene.SetActive(true);
-            thisScene = nextScene;
-            nextScene = null;
-        }
+        thisScene.SetActive(false);
+        nextScene.SetActive(true);
+        thisScene = nextScene;
+        nextScene = null;
     }
 }

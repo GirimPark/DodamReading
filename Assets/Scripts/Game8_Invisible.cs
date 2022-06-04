@@ -8,11 +8,17 @@ public class Game8_Invisible : MonoBehaviour
     GameObject prince;
     GameObject princess;
 
+    GameObject heart;
+    GameObject heartMold;
+
     private void Start()
     {
         ChatWindow = GameObject.Find("말풍선");
         prince = GameObject.Find("왕자");
         princess = GameObject.Find("공주");
+
+        heart = GameObject.Find("dragHeart");
+        heartMold = GameObject.Find("heart");
     }
 
 
@@ -30,9 +36,10 @@ public class Game8_Invisible : MonoBehaviour
         ChatWindow.SetActive(false);
 
         prince.GetComponent<SpriteRenderer>().enabled = true;
-        prince.transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = true;
         princess.GetComponent<SpriteRenderer>().enabled = true;
-        princess.transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = true;
+
+        heart.GetComponent<BoxCollider2D>().enabled = true;
+        heartMold.GetComponent<SpriteRenderer>().enabled = true;
     }
 
 }

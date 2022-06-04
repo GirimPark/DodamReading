@@ -6,8 +6,8 @@ public class WritingReport_RayCast : MonoBehaviour
 {
     GameObject done;
     float distance = 15f;
-    int num = 0;
-    int maxNum = 3; // 4문장 기준
+    int num;
+    int maxNum; // 4문장 기준
     string hittedTag;
     bool stext = false; //  선택text 활성화 여부
     bool already = false;   //  선택text 활성화 한 번만 하도록
@@ -18,23 +18,14 @@ public class WritingReport_RayCast : MonoBehaviour
     Vector3 position;
     Camera cam;
 
-   public string getPath()
-    {
-        return path;
-    }
-
 
     void Start()
     {
+        num = 0;
+        maxNum = 3;
+
         done = GameObject.Find("완료");
         cam = GetComponent<Camera>();
-
-        curParent = GameObject.FindGameObjectsWithTag(num.ToString())[1];
-        for (int i = 0; i < 4; i++)
-        {
-            curParent.transform.GetChild(i).gameObject.SetActive(true);
-        }
-        stext = true;
     }
 
 
@@ -51,6 +42,7 @@ public class WritingReport_RayCast : MonoBehaviour
             for (int i = 0; i < 4; i++)
             {
                 curParent.transform.GetChild(i).gameObject.SetActive(true);
+                //curParent.transform.GetChild(i).gameObject.GetComponent<BoxCollider2D>().enabled = true;
             }
             stext = true;
             already = true;
@@ -106,19 +98,19 @@ public class WritingReport_RayCast : MonoBehaviour
     void Ray(ref RaycastHit2D hit, ref int num)
     {
         hittedTag = hit.collider.gameObject.tag;
-        
 
         //  빈칸text 선택에 맞게 활성화
         curParent = GameObject.FindGameObjectsWithTag(num.ToString())[0];
-        if (hittedTag.Equals("choice1"))
+        if (hittedTag=="choice1")
             curParent.transform.GetChild(0).gameObject.SetActive(true);  
-        else if (hittedTag.Equals("choice2"))
+        else if (hittedTag=="choice2")
             curParent.transform.GetChild(1).gameObject.SetActive(true);
-        else if (hittedTag.Equals("choice3"))
+        else if (hittedTag=="choice3")
             curParent.transform.GetChild(2).gameObject.SetActive(true);
         else
             curParent.transform.GetChild(3).gameObject.SetActive(true);
-        
+
+        hittedTag = "";
 
         //  선택text 비활성화
         curParent = GameObject.FindGameObjectsWithTag(num.ToString())[1];
@@ -139,6 +131,14 @@ public class WritingReport_RayCast : MonoBehaviour
             done.GetComponent<SpriteRenderer>().enabled = true;
             done.GetComponent<BoxCollider2D>().enabled = true;
             num++;
+        }
+        else
+        {
+            curParent = GameObject.FindGameObjectsWithTag(num.ToString())[0];
+            for (int i = 0; i < 4; i++)
+            {
+                curParent.transform.GetChild(i).gameObject.SetActive(false);
+            }
         }
     }
 

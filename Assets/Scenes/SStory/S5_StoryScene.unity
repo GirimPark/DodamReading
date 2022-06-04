@@ -2042,7 +2042,6 @@ GameObject:
   - component: {fileID: 1924755875}
   - component: {fileID: 1924755879}
   - component: {fileID: 1924755878}
-  - component: {fileID: 1924755877}
   - component: {fileID: 1924755876}
   m_Layer: 0
   m_Name: btn_setting
@@ -2077,21 +2076,9 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1924755874}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9f40ef6f9f84b478ea9720ba76905515, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1924755877
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1924755874}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b5103c3de12c4f658e27e472dbf9589, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!61 &1924755878

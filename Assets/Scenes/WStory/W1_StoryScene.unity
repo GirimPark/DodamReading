@@ -317,7 +317,6 @@ GameObject:
   - component: {fileID: 173322689}
   - component: {fileID: 173322693}
   - component: {fileID: 173322692}
-  - component: {fileID: 173322691}
   - component: {fileID: 173322690}
   m_Layer: 0
   m_Name: btn_setting
@@ -352,21 +351,9 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 173322688}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9f40ef6f9f84b478ea9720ba76905515, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &173322691
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 173322688}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b5103c3de12c4f658e27e472dbf9589, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!61 &173322692
@@ -919,7 +906,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1388698308}
   m_Layer: 0
-  m_Name: 1
+  m_Name: scene
   m_TagString: Finish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1284,6 +1271,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.y
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3552818194610392171, guid: 2c4b4f8f9eaed864292532d9820257ab,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3552818194610392171, guid: 2c4b4f8f9eaed864292532d9820257ab,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3552818194610392171, guid: 2c4b4f8f9eaed864292532d9820257ab,
         type: 3}
