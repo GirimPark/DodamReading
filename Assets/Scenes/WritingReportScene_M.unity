@@ -1219,7 +1219,7 @@ MonoBehaviour:
     \uB54C,"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8562eee989fda0b4c96b23a74ae496d8, type: 2}
-  m_sharedMaterial: {fileID: 1944551221748178359, guid: 497a9588684e1c94a957e553796f038e,
+  m_sharedMaterial: {fileID: 572321017470597624, guid: 8562eee989fda0b4c96b23a74ae496d8,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -2388,7 +2388,6 @@ GameObject:
   - component: {fileID: 534011041}
   - component: {fileID: 534011042}
   - component: {fileID: 534011044}
-  - component: {fileID: 534011043}
   - component: {fileID: 534011045}
   m_Layer: 0
   m_Name: btn_setting
@@ -2467,18 +2466,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &534011043
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 534011040}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b5103c3de12c4f658e27e472dbf9589, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &534011044
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2512,7 +2499,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 534011040}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9f40ef6f9f84b478ea9720ba76905515, type: 3}
   m_Name: 
@@ -2741,6 +2728,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Padding: {x: -8, y: -5, z: -8, w: -5}
   m_Softness: {x: 0, y: 0}
+--- !u!1 &681258746
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 681258747}
+  m_Layer: 0
+  m_Name: "\uC720\uB3C4\uD14D\uC2A4\uD2B81"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &681258747
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 681258746}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -20, y: 0, z: 652.6694}
+  m_LocalScale: {x: 8.099999, y: 7.043478, z: 161.99998}
+  m_Children:
+  - {fileID: 1985400497}
+  m_Father: {fileID: 1697192331}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &684265544
 GameObject:
   m_ObjectHideFlags: 0
@@ -4850,7 +4868,7 @@ MonoBehaviour:
   m_text: "\uB2E4\uB9AC\uB97C \uC5BB\uC5C8\uC744 \uB54C,"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8562eee989fda0b4c96b23a74ae496d8, type: 2}
-  m_sharedMaterial: {fileID: 1944551221748178359, guid: 497a9588684e1c94a957e553796f038e,
+  m_sharedMaterial: {fileID: 572321017470597624, guid: 8562eee989fda0b4c96b23a74ae496d8,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -4955,7 +4973,7 @@ RectTransform:
   m_Children:
   - {fileID: 362961096}
   - {fileID: 260081603}
-  - {fileID: 1985400497}
+  - {fileID: 681258747}
   - {fileID: 1417774525}
   - {fileID: 238226713}
   - {fileID: 1987989176}
@@ -5798,7 +5816,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1985400497
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5807,15 +5825,15 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1985400496}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.050000027, y: 0.043478258, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -4.028824}
+  m_LocalScale: {x: 0.006172843, y: 0.0061728386, z: 0.00617284}
   m_Children: []
-  m_Father: {fileID: 1697192331}
-  m_RootOrder: 2
+  m_Father: {fileID: 681258747}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -40.000004, y: 14}
+  m_AnchoredPosition: {x: -2.4691353, y: 1.9876566}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1985400498

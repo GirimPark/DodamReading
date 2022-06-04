@@ -375,7 +375,7 @@ RectTransform:
   m_Children:
   - {fileID: 1493008401}
   - {fileID: 484003261}
-  - {fileID: 2045076657}
+  - {fileID: 1364084190}
   - {fileID: 363939041}
   - {fileID: 1165032352}
   - {fileID: 1313348526}
@@ -833,7 +833,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uB2F9\uD6A1\uD588\uC744 \uAC70\uC608\uC694."
+  m_text: "\uB2F9\uD669\uD588\uC744 \uAC70\uC608\uC694."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8562eee989fda0b4c96b23a74ae496d8, type: 2}
   m_sharedMaterial: {fileID: 572321017470597624, guid: 8562eee989fda0b4c96b23a74ae496d8,
@@ -2419,7 +2419,6 @@ GameObject:
   - component: {fileID: 644104942}
   - component: {fileID: 644104946}
   - component: {fileID: 644104945}
-  - component: {fileID: 644104944}
   - component: {fileID: 644104943}
   m_Layer: 0
   m_Name: btn_setting
@@ -2454,21 +2453,9 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 644104941}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9f40ef6f9f84b478ea9720ba76905515, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &644104944
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 644104941}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b5103c3de12c4f658e27e472dbf9589, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!61 &644104945
@@ -3064,7 +3051,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uB2F9\uD6A1\uD588\uC744 \uAC70\uC608\uC694."
+  m_text: "\uB2F9\uD669\uD588\uC744 \uAC70\uC608\uC694."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8562eee989fda0b4c96b23a74ae496d8, type: 2}
   m_sharedMaterial: {fileID: 1944551221748178359, guid: 497a9588684e1c94a957e553796f038e,
@@ -4022,6 +4009,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1332438182}
   m_CullTransparentMesh: 1
+--- !u!1 &1364084189
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1364084190}
+  m_Layer: 0
+  m_Name: "\uC720\uB3C4\uD14D\uC2A4\uD2B81"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1364084190
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1364084189}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -20, y: 0, z: 652.6694}
+  m_LocalScale: {x: 8.099999, y: 7.043478, z: 161.99998}
+  m_Children:
+  - {fileID: 2045076657}
+  m_Father: {fileID: 154381706}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1374259765
 GameObject:
   m_ObjectHideFlags: 0
@@ -5626,7 +5644,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2045076657
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5635,15 +5653,15 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2045076656}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.050000027, y: 0.043478258, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -4.028824}
+  m_LocalScale: {x: 0.006172843, y: 0.0061728386, z: 0.00617284}
   m_Children: []
-  m_Father: {fileID: 154381706}
-  m_RootOrder: 2
+  m_Father: {fileID: 1364084190}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -40.000004, y: 14}
+  m_AnchoredPosition: {x: -2.4691353, y: 1.9876566}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2045076658

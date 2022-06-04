@@ -8,9 +8,9 @@ public class game8_heart : MonoBehaviour
     bool isPlay;
     float distance;
 
-    GameObject heart1;
-    GameObject heart2;
+    GameObject dragHeart;
     GameObject heartMold;
+
     Vector2 moldPos;
     Vector2 shapePos;
 
@@ -18,12 +18,11 @@ public class game8_heart : MonoBehaviour
 
     void Start()
     {
-        heartMold = GameObject.FindGameObjectWithTag(this.tag);
+        dragHeart = GameObject.Find("dragHeart");
+        heartMold = GameObject.Find("heart");
+
         dalkac = GetComponent<AudioSource>();
         isPlay = false;
-
-        heart1 = GameObject.Find("Dragheart_prince");
-        heart2 = GameObject.Find("Dragheart_princess");
     }
 
     void Update()
@@ -39,17 +38,13 @@ public class game8_heart : MonoBehaviour
 
             dalkac.Play();
             isPlay = true;
+
+            StartCoroutine(WaitAndLoadScene());
         }
 
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved)
         {
             OnMouseDrag();
-        }
-
-        if(heart1.transform.position == GameObject.FindGameObjectWithTag(heart1.tag).transform.position
-            && heart2.transform.position == GameObject.FindGameObjectWithTag(heart2.tag).transform.position)
-        {
-            StartCoroutine(WaitAndLoadScene());
         }
     }
 
