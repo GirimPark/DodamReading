@@ -42,7 +42,6 @@ public class WritingReport_RayCast : MonoBehaviour
             for (int i = 0; i < 4; i++)
             {
                 curParent.transform.GetChild(i).gameObject.SetActive(true);
-                //curParent.transform.GetChild(i).gameObject.GetComponent<BoxCollider2D>().enabled = true;
             }
             stext = true;
             already = true;

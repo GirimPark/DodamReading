@@ -51,9 +51,13 @@ public class nextButton : MonoBehaviour
 
             thisScene.SetActive(false);
             SceneManager.LoadScene(game);
+
+            return;
         }
 
         //  씬 넘기기
+        Debug.Log("childcount : "+GameObject.Find("scene").transform.childCount);
+        Debug.Log("sceneNum : " + sceneNum);
         nextScene = GameObject.Find("scene").transform.GetChild(sceneNum).gameObject;
         sceneNum++;
 
