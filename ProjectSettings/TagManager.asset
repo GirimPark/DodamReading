@@ -24,6 +24,8 @@ TagManager:
   - 3
   - notPrincess
   - cloth
+  - Drag
+  - potion
   layers:
   - Default
   - TransparentFX

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3277857252217919981}
   - component: {fileID: 3277857252217919980}
   - component: {fileID: 3277857252217906707}
+  - component: {fileID: 7031661755091764657}
   - component: {fileID: 3277857252217906706}
   m_Layer: 0
   m_Name: btn_exit
@@ -101,6 +102,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1302f105e5b26ae4a94f6501b609c6d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7031661755091764657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3277857252217919982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 331ea0bf7426add4494ee4db4b540b18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audio: {fileID: 8300000, guid: 07e477e331801404b9581d7caafe72d6, type: 3}
 --- !u!61 &3277857252217906706
 BoxCollider2D:
   m_ObjectHideFlags: 0
