@@ -1397,6 +1397,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 85060295}
     m_Modifications:
+    - target: {fileID: 2180451422999324476, guid: 2c4b4f8f9eaed864292532d9820257ab,
+        type: 3}
+      propertyPath: audio
+      value: 
+      objectReference: {fileID: 8300000, guid: ae0555cb3768274448955d1a4145348d, type: 3}
     - target: {fileID: 3552818194610392171, guid: 2c4b4f8f9eaed864292532d9820257ab,
         type: 3}
       propertyPath: m_Pivot.x
