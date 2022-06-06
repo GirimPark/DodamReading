@@ -12,6 +12,11 @@ public class GameCutting : MonoBehaviour
     public GameObject scissors1, scissors2, scissors3;
     //가위 이미지 변경하기 위한 오브젝트
     public Sprite c_s;
+
+    public AudioClip audio;
+    //   public AudioClip audio2;
+    private AudioSource effect;
+
     void Start()
     {
         clickP1 = 0;
@@ -20,12 +25,21 @@ public class GameCutting : MonoBehaviour
         princess1 = GameObject.Find("princess1");
         princess2 = GameObject.Find("princess2");
         princess3 = GameObject.Find("princess3");
+
+
+        effect = gameObject.AddComponent<AudioSource>();
+        effect.loop = false;
+        effect.clip = audio;
+
+
+
     }
 
     // Update is called once per frame
     void Update()
     {
         if(Input.GetMouseButtonDown(0)){//마우스 클릭시
+            effect.Play();
             Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             RaycastHit2D hit = Physics2D.Raycast(pos, Camera.main.transform.forward);
             if(hit.collider!=null){//클릭한 오브젝트 이름 가져옴

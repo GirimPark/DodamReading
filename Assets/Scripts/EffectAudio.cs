@@ -15,12 +15,13 @@ public class EffectAudio : MonoBehaviour, IPointerClickHandler,IPointerDownHandl
 
     public void OnPointerClick(PointerEventData eventData)
     {
-     //   effect.Play();
+        Debug.Log("클릭");
+        //   effect.Play();
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        Debug.Log("효과음실행중");
+        Debug.Log("다운");
         effect.clip = audio;
         effect.Play();
     }
@@ -34,7 +35,7 @@ public class EffectAudio : MonoBehaviour, IPointerClickHandler,IPointerDownHandl
         if(gameObject.tag == "potion")
         {
    //         effect.clip = audio2;
-            effect.Play();
+     //       effect.Play();
         }
     }
 
