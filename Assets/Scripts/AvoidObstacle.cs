@@ -24,11 +24,21 @@ public class AvoidObstacle : MonoBehaviour
     private Rigidbody2D rigid2D;
 
     void Start(){
+
+      
+
         isArriveTrue = false;//도착 위치에 맞는지
         princeArriveTrue = false;//왕자 도착 위치에 맞는지
         startPos = transform.position;//공주 시작 위치 저장하기
 
         rigid2D = GetComponent<Rigidbody2D>();
+
+
+        PlayerPrefs.DeleteAll();
+        PlayerPrefs.DeleteKey("prince");
+        PlayerPrefs.DeleteKey("mermaid");
+        PlayerPrefs.DeleteKey("sister");
+        PlayerPrefs.DeleteKey("witch");
     }
     void Update()
     {

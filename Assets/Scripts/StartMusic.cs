@@ -56,7 +56,7 @@ public class StartMusic : MonoBehaviour
                 BGM.Play();
             }
         }
-        else if (SceneManager.GetActiveScene().name == "BookReportScene")
+        else if (SceneManager.GetActiveScene().name == "BookReportScene" || SceneManager.GetActiveScene().name == "MainLibraryScene")
         {
             BGM.clip = BGMList[0];
             if (!BGM.isPlaying)
