@@ -12,6 +12,27 @@ EditorBuildSettings:
     path: Assets/Scenes/MainLibraryScene.unity
     guid: 30f65c5ff2276433c8818c091de7a90a
   - enabled: 1
+    path: Assets/Scenes/MStory/M1_StoryScene.unity
+    guid: 006b91bd645d28941a62e3128523adac
+  - enabled: 1
+    path: Assets/Scenes/Game/Game1_Obstacle.unity
+    guid: 542d778c7a4aa47c488e7fe77d4d79b8
+  - enabled: 1
+    path: Assets/Scenes/MStory/M2_StoryScene.unity
+    guid: 4e7cedde8becf69418eb98e103a27588
+  - enabled: 1
+    path: Assets/Scenes/Game/Game2_HJ.unity
+    guid: 72e6f7d840f43448785f0f2b2ac07daf
+  - enabled: 1
+    path: Assets/Scenes/MStory/M3_StoryScene.unity
+    guid: f7a4ef572ed1eb649a9ba40545dafefd
+  - enabled: 1
+    path: Assets/Scenes/Game/Game3_picturepuzzle.unity
+    guid: 2e359d2b7e5418141b3fea3ee2640456
+  - enabled: 1
+    path: Assets/Scenes/MStory/M4_StoryScene.unity
+    guid: 7e7f86fa29fbae64d8bc210ed5663731
+  - enabled: 1
     path: Assets/Scenes/BookReportScene.unity
     guid: c62999278242447379094a6c16c3ca59
   - enabled: 1
@@ -26,9 +47,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CharacterChoiceScene.unity
     guid: 185e69c449ad9440d87e108c2e94687e
-  - enabled: 1
-    path: Assets/Scenes/Game/Game3_picturepuzzle.unity
-    guid: 2e359d2b7e5418141b3fea3ee2640456
   - enabled: 1
     path: Assets/Scenes/Game/Game5_makingPotion.unity
     guid: a455b6ccdde8f124d80c5a1fbc6a6ce4
@@ -45,9 +63,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Game/Game12_Calendar.unity
     guid: 63ef8bfd1c7a06d418770e0ba037ec71
   - enabled: 1
-    path: Assets/Scenes/Game/Game2_HJ.unity
-    guid: 72e6f7d840f43448785f0f2b2ac07daf
-  - enabled: 1
     path: Assets/Scenes/Game/Game11Cutting.unity
     guid: a37c21d6c413140e2bd7cff5d300972e
   - enabled: 1
@@ -57,26 +72,11 @@ EditorBuildSettings:
     path: Assets/Scenes/Game/Game4_Marble.unity
     guid: 6b2fe300e1b1444a6a6f5ac76ea9aaf6
   - enabled: 1
-    path: Assets/Scenes/Game/Game1_Obstacle.unity
-    guid: 542d778c7a4aa47c488e7fe77d4d79b8
-  - enabled: 1
     path: Assets/Scenes/Game/Game10_OX.unity
     guid: 740f515a9008a4a19b363ed65e862d21
   - enabled: 1
     path: Assets/Scenes/SettingScene.unity
     guid: c0ddc9d2d28131046b536a71607ca571
-  - enabled: 1
-    path: Assets/Scenes/MStory/M1_StoryScene.unity
-    guid: 006b91bd645d28941a62e3128523adac
-  - enabled: 1
-    path: Assets/Scenes/MStory/M2_StoryScene.unity
-    guid: 4e7cedde8becf69418eb98e103a27588
-  - enabled: 1
-    path: Assets/Scenes/MStory/M3_StoryScene.unity
-    guid: f7a4ef572ed1eb649a9ba40545dafefd
-  - enabled: 1
-    path: Assets/Scenes/MStory/M4_StoryScene.unity
-    guid: 7e7f86fa29fbae64d8bc210ed5663731
   - enabled: 1
     path: Assets/Scenes/WritingReportScene_M.unity
     guid: 8ac4517bb44f80e459c945d7fdc67032
