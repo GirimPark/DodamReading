@@ -896,10 +896,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "\uC655\uC790\uB294 \uBC14\uB2F7\uAC00\uC5D0\uC11C \uC790\uC2E0\uC744 \uAD6C\uD574\uC900
-    \uC5EC\uC778\uACFC \uBE44\uC2B7\uD55C \uC0AC\uB78C\uC744 \uBC1C\uACAC\uD588\uC5B4\uC694.\r\n\r\n\uADF8\uB140\uB294
+    \uC0AC\uB78C\uACFC \uBE44\uC2B7\uD55C \uC0AC\uB78C\uC744 \uBC1C\uACAC\uD588\uC5B4\uC694.\r\n\r\n\uADF8\uB140\uB294
     \uB9D0\uC744 \uD558\uC9C0 \uBABB\uD558\uB294 \uAC83 \uAC19\uC558\uC5B4\uC694.\r\n\r\n\uC548\uC4F0\uB7EC\uC6B4
     \uB9C8\uC74C\uC5D0 \uC655\uC790\uB294 \uADF8\uB140\uB97C \uC655\uAD81\uC73C\uB85C
-    \uB370\uB824\uAC14\uC2B5\uB2C8\uB2E4.\r"
+    \uB370\uB824\uAC14\uC5B4\uC694.\r"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8562eee989fda0b4c96b23a74ae496d8, type: 2}
   m_sharedMaterial: {fileID: 572321017470597624, guid: 8562eee989fda0b4c96b23a74ae496d8,
@@ -1323,8 +1323,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4279834905
-  m_fontColor: {r: 0.09803922, g: 0.09803922, b: 0.09803922, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2019,7 +2019,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.7924528, g: 0.7924528, b: 0.7924528, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
