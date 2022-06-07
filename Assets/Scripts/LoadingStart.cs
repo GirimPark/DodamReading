@@ -8,7 +8,12 @@ public class LoadingStart : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       
+        PlayerPrefs.DeleteKey("prince");
+        PlayerPrefs.DeleteKey("mermaid");
+        PlayerPrefs.DeleteKey("sister");
+        PlayerPrefs.DeleteKey("witch");
+        PlayerPrefs.DeleteKey("nTHScene");
+        PlayerPrefs.SetInt("startScene", 10);
     }
 
     // Update is called once per frame
@@ -18,7 +23,7 @@ public class LoadingStart : MonoBehaviour
             StartCoroutine(WaitAndLoadScene()); 
             IEnumerator WaitAndLoadScene()
             {
-            yield return new WaitForSeconds(3.0f);
+            yield return new WaitForSeconds(1.0f);
 
             SceneManager.LoadScene("MainLibraryScene");//신 변경
             }
