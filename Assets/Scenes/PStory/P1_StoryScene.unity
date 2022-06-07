@@ -675,7 +675,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.8509804}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1321,7 +1321,7 @@ MonoBehaviour:
   m_text: "\uADF8\uB7F0\uB370 \uAC11\uC790\uAE30 \uBC14\uB2E4\uC5D0 \uD070 \uD30C\uB3C4\uAC00
     \uC77C\uC5B4\uB098\uC11C \uBC14\uB2E4\uC5D0 \uBE60\uC9C0\uACE0 \uB9D0\uC558\uC5B4\uC694.\r\n\r\n\uB208\uC774
     \uC810\uC810 \uAC10\uACBC\uC9C0\uB9CC, \uC790\uC2E0\uC744 \uC548\uC544\uC8FC\uB294
-    \uB530\uB73B\uD55C \uD488\uC744 \uB290\uB084 \uC218 \uC788\uC5C8\uC2B5\uB2C8\uB2E4."
+    \uB530\uB73B\uD55C \uD488\uC744 \uB290\uB084 \uC218 \uC788\uC5C8\uC5B4\uC694."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8562eee989fda0b4c96b23a74ae496d8, type: 2}
   m_sharedMaterial: {fileID: 572321017470597624, guid: 8562eee989fda0b4c96b23a74ae496d8,
@@ -1848,9 +1848,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "\uB208\uC744 \uB728\uC790 \uC55E\uC5D0\uB294 \uC544\uB984\uB2E4\uC6B4
-    \uC5EC\uC778\uC774 \uC788\uC5C8\uC5B4\uC694.\r\n\r\n\uC790\uC2E0\uC744 \uAD6C\uD574\uC900
-    \uC5EC\uC778\uC774\uB77C\uACE0 \uC0DD\uAC01\uD55C \uC655\uC790\uB294 \uB9C8\uC74C\uC774
-    \uD3B8\uC548\uD574\uC838 \uC7A0\uC774 \uB4E4\uC5C8\uC2B5\uB2C8\uB2E4.\r"
+    \uACF5\uC8FC\uAC00 \uC788\uC5C8\uC5B4\uC694.\r\n\r\n\uC790\uC2E0\uC744 \uAD6C\uD574\uC900
+    \uC0AC\uB78C\uC774\uB77C\uACE0 \uC0DD\uAC01\uD55C \uC655\uC790\uB294 \uB9C8\uC74C\uC774
+    \uD3B8\uC548\uD574\uC838 \uC7A0\uC774 \uB4E4\uC5C8\uC5B4\uC694.\r"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8562eee989fda0b4c96b23a74ae496d8, type: 2}
   m_sharedMaterial: {fileID: 572321017470597624, guid: 8562eee989fda0b4c96b23a74ae496d8,
