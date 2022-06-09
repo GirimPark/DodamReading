@@ -14,6 +14,7 @@ public class LoadingStart : MonoBehaviour
         PlayerPrefs.DeleteKey("witch");
         PlayerPrefs.DeleteKey("nTHScene");
         PlayerPrefs.SetInt("startScene", 10);
+        PlayerPrefs.SetInt("loadNum", 0);
     }
 
     // Update is called once per frame

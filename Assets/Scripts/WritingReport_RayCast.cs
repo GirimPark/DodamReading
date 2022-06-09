@@ -15,6 +15,8 @@ public class WritingReport_RayCast : MonoBehaviour
     RaycastHit2D hit;
     string path;
 
+    int loadNum = 0;
+
     Vector3 position;
     Camera cam;
 
@@ -162,8 +164,12 @@ public class WritingReport_RayCast : MonoBehaviour
     {
         yield return new WaitForSeconds(1.0f);
 
+        loadNum = PlayerPrefs.GetInt("loadNum") + 1;
+        PlayerPrefs.SetInt("loadNum", loadNum);
 
-        PlayerPrefs.SetString("path", path);
+        Debug.Log("loadNum:" + loadNum);
+        PlayerPrefs.SetString("path"+(loadNum-1), path);
+
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("BookReportScene");
         
         while (!asyncLoad.isDone)
