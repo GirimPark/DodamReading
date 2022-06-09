@@ -10,14 +10,20 @@ public class ReadingReport : MonoBehaviour
 
     SpriteRenderer spriteR;
     Sprite[] sprites;
+
     int num = 0;
+    string path;
+    int loadNum = 0;
+    int curNum = 0;
 
     void Start()
     {
-       /* PlayerPrefs.DeleteKey("mermaid");
-        PlayerPrefs.DeleteKey("sister");
-        PlayerPrefs.DeleteKey("prince");
-        PlayerPrefs.DeleteKey("witch");*/
+        /* PlayerPrefs.DeleteKey("mermaid");
+         PlayerPrefs.DeleteKey("sister");
+         PlayerPrefs.DeleteKey("prince");
+         PlayerPrefs.DeleteKey("witch");*/
+
+        loadNum = PlayerPrefs.GetInt("loadNum");
 
         exit = GameObject.Find("exit").transform.GetChild(0).gameObject;
         spriteR = this.GetComponent<SpriteRenderer>();
@@ -27,12 +33,16 @@ public class ReadingReport : MonoBehaviour
         if(sprites.Length > 0)
             spriteR.sprite = sprites[num++];
         //  기존 이미지 파일이 없다면
-        else
+        else if (loadNum > 0 && curNum < loadNum)
         {
-            string path = PlayerPrefs.GetString("path");
-            Debug.Log(path);
+            Debug.Log("loadNum:" + loadNum + "\ncurNum:" + curNum);
+            path = PlayerPrefs.GetString("path"+curNum);
+            curNum++;
 
-            byte[] imgBytes = System.IO.File.ReadAllBytes(path);
+            byte[] imgBytes = { };
+            if (path.Length > 0)
+                imgBytes = System.IO.File.ReadAllBytes(path);
+
             if (imgBytes.Length > 0)
             {
                 Debug.Log("imgBytes 있음");
@@ -63,12 +73,15 @@ public class ReadingReport : MonoBehaviour
             spriteR.sprite = sprites[num++];
             exit.SetActive(true);
         }
-        else
+        else if (loadNum > 0 && curNum < loadNum)
         {
-            string path = PlayerPrefs.GetString("path");
-            Debug.Log(path);
-     
-            byte[] imgBytes = System.IO.File.ReadAllBytes(path);
+            string path = PlayerPrefs.GetString("path" + curNum);
+            curNum++;
+
+            byte[] imgBytes= { };
+            if (path.Length>0)   
+                imgBytes = System.IO.File.ReadAllBytes(path);
+
             if (imgBytes.Length > 0)
             {
                 Debug.Log("imgBytes 있음");
