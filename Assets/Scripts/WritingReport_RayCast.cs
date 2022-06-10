@@ -1,30 +1,36 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System;
 
 public class WritingReport_RayCast : MonoBehaviour
 {
     GameObject done;
-    float distance = 15f;
+    float distance;
     int num;
     int maxNum; // 4문장 기준
     string hittedTag;
-    bool stext = false; //  선택text 활성화 여부
-    bool already = false;   //  선택text 활성화 한 번만 하도록
+    bool stext; //  선택text 활성화 여부
+    bool already;   //  선택text 활성화 한 번만 하도록
     GameObject curParent;
     RaycastHit2D hit;
     string path;
 
-    int loadNum = 0;
+    int loadNum;
 
     Vector3 position;
     Camera cam;
 
-
-    void Start()
+    private void Awake()
     {
+        stext = false;
+        already = false;
+
+        distance = 15f;
         num = 0;
         maxNum = 3;
+
+        loadNum = 0;
 
         done = GameObject.Find("완료");
         cam = GetComponent<Camera>();
@@ -35,41 +41,43 @@ public class WritingReport_RayCast : MonoBehaviour
     void Update()
     {
         //  유도text, 선택text 활성화
-        if (!stext && !already && num<maxNum)
+        if (!stext && !already && num < maxNum)
         {
             curParent = GameObject.Find("유도텍스트" + (num + 1).ToString());
+            
             curParent.transform.GetChild(0).gameObject.SetActive(true);
+            Debug.Log("유도텍스트" + (num + 1) + " 활성화");
 
             curParent = GameObject.FindGameObjectsWithTag(num.ToString())[1];
             for (int i = 0; i < 4; i++)
             {
                 curParent.transform.GetChild(i).gameObject.SetActive(true);
+                Debug.Log("선택텍스트" + (num+1)+"-"+(i + 1) + " 활성화");
             }
             stext = true;
             already = true;
         }
-        
+
         //  클릭시 ray() 실행
-        if(Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0))
         {
             if (Input.mousePosition != null) position = Input.mousePosition;
             position = cam.ScreenToWorldPoint(position);
 
             hit = Physics2D.Raycast(position, transform.forward, distance);
-            
+
             Debug.DrawRay(position, transform.forward * 500, Color.red, 0.3f);
 
             if (hit && hit.collider.gameObject.tag == "Finish")
             {
                 StartCoroutine(Rendering());
-                StartCoroutine(LoadMyAsyncScene());
+                //StartCoroutine(LoadMyAsyncScene());
             }
             else if (hit && hit.collider.gameObject.tag != "Untagged")
             {
                 Ray(ref hit, ref num);
                 already = false;
             }
-            
         }
 
         //  터치시 ray() 실행
@@ -85,7 +93,7 @@ public class WritingReport_RayCast : MonoBehaviour
             if (hit && hit.collider.gameObject.tag == "Finish")
             {
                 StartCoroutine(Rendering());
-                StartCoroutine(LoadMyAsyncScene());
+                //StartCoroutine(LoadMyAsyncScene());
             }
             else if (hit && hit.collider.gameObject.tag != "Untagged")
             {
@@ -98,18 +106,35 @@ public class WritingReport_RayCast : MonoBehaviour
 
     void Ray(ref RaycastHit2D hit, ref int num)
     {
+        Debug.Log("클릭");
+
         hittedTag = hit.collider.gameObject.tag;
 
         //  빈칸text 선택에 맞게 활성화
         curParent = GameObject.FindGameObjectsWithTag(num.ToString())[0];
-        if (hittedTag=="choice1")
-            curParent.transform.GetChild(0).gameObject.SetActive(true);  
-        else if (hittedTag=="choice2")
+        if (hittedTag == "choice1")
+        {
+            curParent.transform.GetChild(0).gameObject.SetActive(true);
+            Debug.Log("빈칸텍스트" + (num + 1) + "-1 활성화");
+        }
+            
+        else if (hittedTag == "choice2")
+        {
             curParent.transform.GetChild(1).gameObject.SetActive(true);
-        else if (hittedTag=="choice3")
+            Debug.Log("빈칸텍스트" + (num + 1) + "-2 활성화");
+        }
+        else if (hittedTag == "choice3")
+        {
             curParent.transform.GetChild(2).gameObject.SetActive(true);
+            Debug.Log("빈칸텍스트" + (num + 1) + "-3 활성화");
+        }
+
         else
+        {
             curParent.transform.GetChild(3).gameObject.SetActive(true);
+            Debug.Log("빈칸텍스트" + (num + 1) + "-4 활성화");
+        }
+            
 
         hittedTag = "";
 
@@ -121,7 +146,6 @@ public class WritingReport_RayCast : MonoBehaviour
         }
         stext = false;
         num++;
-        Debug.Log(num);
 
         if (num == maxNum)
         {
@@ -158,9 +182,18 @@ public class WritingReport_RayCast : MonoBehaviour
 
         imgBytes = texture.EncodeToPNG();
         System.IO.File.WriteAllBytes(path, imgBytes);
+
+
+        loadNum = PlayerPrefs.GetInt("loadNum") + 1;
+        PlayerPrefs.SetInt("loadNum", loadNum);
+
+        Debug.Log("loadNum:" + loadNum);
+        PlayerPrefs.SetString("path" + (loadNum - 1), path);
+
+        SceneManager.LoadScene("BookReportScene");
     }
 
-    IEnumerator LoadMyAsyncScene()
+    /*IEnumerator LoadMyAsyncScene()
     {
         yield return new WaitForSeconds(1.0f);
 
@@ -177,5 +210,5 @@ public class WritingReport_RayCast : MonoBehaviour
             yield return null;
         }
         
-    }
+    }*/
 }
