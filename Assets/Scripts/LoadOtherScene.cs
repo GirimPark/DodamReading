@@ -29,6 +29,7 @@ public class LoadOtherScene : MonoBehaviour
             if (hit.collider != null)
             {//클릭한 오브젝트 이름 가져옴
                 GameObject click_obj = hit.transform.gameObject;
+                Debug.Log("클릭 오브젝트 이름 : "+click_obj.name);
                 //Debug.Log(click_obj.name);
                 if (click_obj.name == "btn_setting")
                 {//설정 클릭
@@ -48,6 +49,8 @@ public class LoadOtherScene : MonoBehaviour
                 }
                 else if (click_obj.name == "book1")
                 {//인어공주 책 클릭
+                    Debug.Log("start : "+startN);
+                    Debug.Log("nth : "+nthN);
                     //맨 처음 책을 보는거라면
                     if(startN){
                         SceneManager.LoadScene("M1_StoryScene");

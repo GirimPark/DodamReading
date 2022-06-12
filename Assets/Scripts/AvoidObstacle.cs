@@ -77,26 +77,6 @@ public class AvoidObstacle : MonoBehaviour
                 }
             }
         }
-        //마우스로 위치 조정
-        /*float x =Input.GetAxisRaw("Horizontal");
-        float y = Input.GetAxisRaw("Vertical");
-        rigid2D.velocity = new Vector3(x,y,0)*5.0f;*/
-        //왼쪽으로 이동
-        /*if(Input.GetKey(KeyCode.LeftArrow)){
-            transform.position += new Vector3(-0.02f, 0.0f, 0.0f);
-        }
-        //오른쪽으로 이동
-        if(Input.GetKey(KeyCode.RightArrow)){
-            transform.position += new Vector3(0.02f, 0.0f, 0.0f);
-        }
-        //뒤로 이동
-        if(Input.GetKey(KeyCode.DownArrow)){
-            transform.position += new Vector3(0.0f, -0.02f, 0.0f);
-        }
-        //위쪽으로 이동
-        if(Input.GetKey(KeyCode.UpArrow)){
-            transform.position += new Vector3(0.0f, 0.02f, 0.0f);
-        }*/
     }
 
     void OnMouseDrag() 

@@ -10,7 +10,7 @@ public class ChangeText : MonoBehaviour
     bool isArriveTrue;//도착 지점에 도착했을 때
     float distance;//공주-도착지점 거리
     private TextMeshProUGUI textArrive;//변경 텍스트
-    
+
     // Start is called before the first frame update
     void Start()
     {

@@ -34,8 +34,8 @@ public class EffectAudio : MonoBehaviour, IPointerClickHandler,IPointerDownHandl
         }
         if(gameObject.tag == "potion")
         {
-   //         effect.clip = audio2;
-     //       effect.Play();
+            effect.clip = audio;
+            effect.Play();
         }
     }
 

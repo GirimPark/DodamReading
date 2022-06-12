@@ -989,7 +989,7 @@ GameObject:
   - component: {fileID: 1393092930}
   m_Layer: 0
   m_Name: "\uC7AC\uB8CC1"
-  m_TagString: Untagged
+  m_TagString: potion
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1204,7 +1204,7 @@ GameObject:
   - component: {fileID: 1412066939}
   m_Layer: 0
   m_Name: "\uC7AC\uB8CC2"
-  m_TagString: Finish
+  m_TagString: potion
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1656,7 +1656,7 @@ GameObject:
   - component: {fileID: 1559826935}
   m_Layer: 0
   m_Name: "\uC7AC\uB8CC3"
-  m_TagString: Untagged
+  m_TagString: potion
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
