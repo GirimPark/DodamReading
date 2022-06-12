@@ -12,18 +12,17 @@ public class ClothVoid : MonoBehaviour
     Image thisImg; //현재 이미지
     int trueCount, trueCountS, trueCountP,trueCountW;
 
+    //효과음
+    public AudioClip audio;
+    AudioSource audioSource;
+    
+    void Awake(){
+        this.audioSource = GetComponent<AudioSource>();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        /*if(PlayerPrefs.HasKey("mermaid")){//인어공주
-            isMermaid=true;
-        }if(PlayerPrefs.HasKey("sister")){//인어공주 언니
-            isSister=true;
-        }if(PlayerPrefs.HasKey("witch")){//마녀
-            isWitch=true;
-        }if(PlayerPrefs.HasKey("prince")){//왕자
-            isPrince=true;
-        }*/
         //옷장씬 갔다와야지만 isFairy 활성화 되도록
         if(PlayerPrefs.HasKey("mermaid")){//인어공주
             isMermaid=true;
@@ -66,21 +65,34 @@ public class ClothVoid : MonoBehaviour
                 if(click_obj.name=="cloth1"){
                     transform.localScale = new Vector2(0.40f,0.36f);//크기 맞춰주기
                     thisImg.sprite = change_img1;
+                    PlaySound("play");//효과음 재생
                 }else if(click_obj.name=="cloth2"){
                     transform.localScale = new Vector2(0.29f,0.34f);//크기 맞춰주기
                     thisImg.sprite = change_img2;
+                    PlaySound("play");//효과음 재생
                 }else if(click_obj.name=="cloth3"){
                     transform.localScale = new Vector2(0.2f,0.35f);//크기 맞춰주기
                     thisImg.sprite = change_img3;
+                    PlaySound("play");//효과음 재생
                 }else if(click_obj.name=="cloth4"){
                     transform.localScale = new Vector2(0.23f,0.35f);//크기 맞춰주기
                     thisImg.sprite = change_img4;
+                    PlaySound("play");//효과음 재생
                 }else if(click_obj.name=="btn_reset"){
                     transform.localScale = new Vector2(0.2f,0.35f);//크기 맞춰주기
                     thisImg.sprite = player_img;
+                    PlaySound("play");//효과음 재생
                 }
             }
         }
+    }
+    void PlaySound(string action){
+        switch(action){
+            case "play":
+                audioSource.clip=audio;
+                break;
+        }
+        audioSource.Play();
     }
     
 }
