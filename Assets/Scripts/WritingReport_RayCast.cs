@@ -52,6 +52,9 @@ public class WritingReport_RayCast : MonoBehaviour
             for (int i = 0; i < 4; i++)
             {
                 curParent.transform.GetChild(i).gameObject.SetActive(true);
+                // 위치 고정해서 나타남 -> 빈칸텍스트 나타나지 않지만 클릭 미작동. 원래 겹쳐 나올때도 클릭 미작동
+                Transform T = curParent.transform.GetChild(i).gameObject.GetComponent<Transform>();
+                T.position = new Vector3(1.0f, (float)i, 0.0f);
                 Debug.Log("선택텍스트" + (num+1)+"-"+(i + 1) + " 활성화");
             }
             stext = true;
@@ -61,6 +64,7 @@ public class WritingReport_RayCast : MonoBehaviour
         //  클릭시 ray() 실행
         if (Input.GetMouseButtonDown(0))
         {
+            Debug.Log("클릭");
             if (Input.mousePosition != null) position = Input.mousePosition;
             position = cam.ScreenToWorldPoint(position);
 
@@ -106,7 +110,7 @@ public class WritingReport_RayCast : MonoBehaviour
 
     void Ray(ref RaycastHit2D hit, ref int num)
     {
-        Debug.Log("클릭");
+        Debug.Log("Ray 실행");
 
         hittedTag = hit.collider.gameObject.tag;
 
