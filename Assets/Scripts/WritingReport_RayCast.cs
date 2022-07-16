@@ -36,6 +36,20 @@ public class WritingReport_RayCast : MonoBehaviour
         cam = GetComponent<Camera>();
     }
 
+    private void Start()
+    {
+        //curParent = GameObject.Find("유도텍스트" + (num + 1).ToString());
+
+        //curParent.transform.GetChild(0).gameObject.SetActive(true);
+        //Debug.Log("유도텍스트" + (num + 1) + " 활성화");
+
+        //curParent = GameObject.FindGameObjectsWithTag(num.ToString())[1];
+        //for (int i = 0; i < 4; i++)
+        //{
+        //    curParent.transform.GetChild(i).gameObject.SetActive(true);
+        //    Debug.Log("선택텍스트" + (num + 1) + "-" + (i + 1) + " 활성화");
+        //}
+    }
 
     //  부모tag > 유도텍스트=0, 빈칸텍스트=1, 선택텍스트=2
     void Update()
@@ -52,9 +66,6 @@ public class WritingReport_RayCast : MonoBehaviour
             for (int i = 0; i < 4; i++)
             {
                 curParent.transform.GetChild(i).gameObject.SetActive(true);
-                // 위치 고정해서 나타남 -> 빈칸텍스트 나타나지 않지만 클릭 미작동. 원래 겹쳐 나올때도 클릭 미작동
-                Transform T = curParent.transform.GetChild(i).gameObject.GetComponent<Transform>();
-                T.position = new Vector3(1.0f, (float)i, 0.0f);
                 Debug.Log("선택텍스트" + (num+1)+"-"+(i + 1) + " 활성화");
             }
             stext = true;
