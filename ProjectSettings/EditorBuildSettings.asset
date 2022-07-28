@@ -59,7 +59,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Game/Game9_findLetter.unity
     guid: 927a5781caa9fb44aa5cef8a9872b061
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Game/Game12_Calendar.unity
     guid: 63ef8bfd1c7a06d418770e0ba037ec71
   - enabled: 0
@@ -77,7 +77,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SettingScene.unity
     guid: c0ddc9d2d28131046b536a71607ca571
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/WritingReportScene_M.unity
     guid: 8ac4517bb44f80e459c945d7fdc67032
   - enabled: 0
