@@ -6,29 +6,23 @@ using System;
 public class WritingReport_RayCast : MonoBehaviour
 {
     GameObject done;
-    float distance;
     int num;
-    int maxNum; // 4문장 기준
+    int maxNum;
     string hittedTag;
+
+    GameObject[] objArr;
     GameObject curParent;
-    //RaycastHit2D hit;
+
     string path;
-
     int loadNum;
-
-    //Vector2 position;
-    Camera cam;
 
     private void Awake()
     {
-        distance = 15f;
-        num = 0;
-        maxNum = 3;
-
+        num = 1;
+        maxNum = 4;
         loadNum = 0;
-
+      
         done = GameObject.Find("완료");
-        cam = GetComponent<Camera>();
     }
 
     private void Start()
@@ -36,20 +30,15 @@ public class WritingReport_RayCast : MonoBehaviour
         ActivateText();
     }
 
-    //  부모tag > 유도텍스트=0, 빈칸텍스트=1, 선택텍스트=2
     void Update()
     {
         //  클릭시 ray() 실행
         if (Input.GetMouseButtonDown(0))
         {
             Debug.Log("클릭");
-            //if (Input.mousePosition != null) position = Input.mousePosition;
-            //position = cam.ScreenToWorldPoint(position);
-            //hit = Physics2D.Raycast(position, transform.forward, distance);
-            //Debug.DrawRay(position, transform.forward * 500, Color.red, 0.3f);
 
-            Vector2 pos = cam.ScreenToWorldPoint(Input.mousePosition);
-            RaycastHit2D hit = Physics2D.Raycast(pos, cam.transform.forward);
+            Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            RaycastHit2D hit = Physics2D.Raycast(pos, Camera.main.transform.forward);
 
             if (hit && hit.collider.gameObject.tag == "Finish")
             {
@@ -57,7 +46,7 @@ public class WritingReport_RayCast : MonoBehaviour
             }
             else if (hit && hit.collider.gameObject.tag != "Untagged")
             {
-                Ray(ref hit, ref num);
+                Ray(hit, ref num);
             }
         }
 
@@ -73,20 +62,21 @@ public class WritingReport_RayCast : MonoBehaviour
             }
             else if (hit && hit.collider.gameObject.tag != "Untagged")
             {
-                Ray(ref hit, ref num);
+                Ray(hit, ref num);
             }
         }
     }
 
 
-    void Ray(ref RaycastHit2D hit, ref int num)
+
+    void Ray(RaycastHit2D hit, ref int num) //  sorting 후 오브젝트 순서 : 빈칸, 선택, 유도
     {
         Debug.Log("Ray 실행");
 
         hittedTag = hit.collider.gameObject.tag;
 
         //  빈칸text 선택에 맞게 활성화
-        curParent = GameObject.FindGameObjectsWithTag(num.ToString())[0];
+        curParent = objArr[0];
         if (hittedTag == "choice1")
         {
             curParent.transform.GetChild(0).gameObject.SetActive(true);
@@ -112,7 +102,7 @@ public class WritingReport_RayCast : MonoBehaviour
 
 
         //  선택text 비활성화
-        curParent = GameObject.FindGameObjectsWithTag(num.ToString())[1];
+        curParent = objArr[1];
         for (int i = 0; i < 4; i++)
         {
             curParent.transform.GetChild(i).gameObject.SetActive(false);
@@ -123,7 +113,7 @@ public class WritingReport_RayCast : MonoBehaviour
         //  방금 문장이 마지막 직전인 경우
         if (num == maxNum)  
         {
-            curParent = GameObject.Find("유도텍스트" + (num + 1).ToString());
+            curParent = GameObject.Find("유도텍스트4");
             curParent.transform.GetChild(0).gameObject.SetActive(true);
             curParent.transform.GetChild(1).gameObject.SetActive(true);
 
@@ -137,19 +127,29 @@ public class WritingReport_RayCast : MonoBehaviour
         }
     }
 
+    int Compare(GameObject x, GameObject y)
+    {
+        return x.name.CompareTo(y.name);
+    }
+
     void ActivateText() //  유도텍스트, 선택텍스트를 활성화함
     {
-        curParent = GameObject.Find("유도텍스트" + (num + 1).ToString());
+        //  유도텍스트 활성화
+        objArr = GameObject.FindGameObjectsWithTag(num.ToString());
+        Array.Sort<GameObject>(objArr, Compare);
+        //  sorting 후 오브젝트 순서 : 빈칸, 선택, 유도
 
+        curParent = objArr[2];
+        Debug.Log("현재 찾아진 부모오브젝트 이름(정답 유도텍스트1) : " + curParent.name);
         curParent.transform.GetChild(0).gameObject.SetActive(true);
-        Debug.Log("유도텍스트" + (num + 1) + " 활성화");
 
-        curParent = GameObject.FindGameObjectsWithTag(num.ToString())[1];
-        for (int i = 0; i < 4; i++)
-        {
-            curParent.transform.GetChild(i).gameObject.SetActive(true);
-            Debug.Log("선택텍스트" + (num + 1) + "-" + (i + 1) + " 활성화");
-        }
+        //  선택텍스트 활성화
+        curParent = objArr[1];
+        Debug.Log("현재 찾아진 부모오브젝트 이름(정답 선택텍스트1) : " + curParent.name);
+        curParent.transform.GetChild(0).gameObject.SetActive(true);
+        curParent.transform.GetChild(1).gameObject.SetActive(true);
+        curParent.transform.GetChild(2).gameObject.SetActive(true);
+        curParent.transform.GetChild(3).gameObject.SetActive(true);
     }
 
     IEnumerator Rendering() //  화면 캡쳐
