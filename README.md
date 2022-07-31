@@ -17,3 +17,6 @@ Through various methods, children can develop vocabulary and thinking skills.
 Please refer to this article for more information.  
 [모도리들_아동용 동화 구연 서비스.pdf](https://github.com/GirimPark/Modori/files/8355046/_3.pdf)
 
+완성된 프로젝트는 다음 링크에서 다운로드 받을 수 있습니다.
+The completed project can be downloaded from the following link:
+https://swuackr-my.sharepoint.com/:f:/g/personal/zzrlfla_swu_ac_kr/Emi6XXO5c7pNkZhbRN9NPc8BzJooh-DK18xb8v12Qih11A?e=ZRFCg5
