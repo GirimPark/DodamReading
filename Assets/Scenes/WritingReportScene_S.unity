@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 61842741}
   m_Layer: 0
   m_Name: "\uC120\uD0DD\uD14D\uC2A4\uD2B81"
-  m_TagString: 0
+  m_TagString: 1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -308,7 +308,7 @@ GameObject:
   - component: {fileID: 174458210}
   m_Layer: 0
   m_Name: "\uC720\uB3C4\uD14D\uC2A4\uD2B84"
-  m_TagString: Untagged
+  m_TagString: 4
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -507,7 +507,7 @@ GameObject:
   - component: {fileID: 338298570}
   m_Layer: 0
   m_Name: "\uC720\uB3C4\uD14D\uC2A4\uD2B83"
-  m_TagString: Untagged
+  m_TagString: 3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -543,7 +543,7 @@ GameObject:
   - component: {fileID: 455274603}
   m_Layer: 0
   m_Name: "\uC720\uB3C4\uD14D\uC2A4\uD2B81"
-  m_TagString: Untagged
+  m_TagString: 1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -736,7 +736,7 @@ GameObject:
   - component: {fileID: 495500298}
   m_Layer: 0
   m_Name: "\uC120\uD0DD\uD14D\uC2A4\uD2B83"
-  m_TagString: 2
+  m_TagString: 3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2714,7 +2714,7 @@ GameObject:
   - component: {fileID: 1399563042}
   m_Layer: 0
   m_Name: "\uBE48\uCE78\uD14D\uC2A4\uD2B81"
-  m_TagString: 0
+  m_TagString: 1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3246,7 +3246,7 @@ GameObject:
   - component: {fileID: 1576705517}
   m_Layer: 0
   m_Name: "\uC120\uD0DD\uD14D\uC2A4\uD2B82"
-  m_TagString: 1
+  m_TagString: 2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3756,7 +3756,7 @@ GameObject:
   - component: {fileID: 1670441792}
   m_Layer: 0
   m_Name: "\uC720\uB3C4\uD14D\uC2A4\uD2B82"
-  m_TagString: Untagged
+  m_TagString: 2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5213,7 +5213,7 @@ GameObject:
   - component: {fileID: 2021154886}
   m_Layer: 0
   m_Name: "\uBE48\uCE78\uD14D\uC2A4\uD2B82"
-  m_TagString: 1
+  m_TagString: 2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5997,7 +5997,7 @@ GameObject:
   - component: {fileID: 2134937142}
   m_Layer: 0
   m_Name: "\uBE48\uCE78\uD14D\uC2A4\uD2B83"
-  m_TagString: 2
+  m_TagString: 3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

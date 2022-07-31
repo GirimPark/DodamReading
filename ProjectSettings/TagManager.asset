@@ -26,6 +26,7 @@ TagManager:
   - cloth
   - Drag
   - potion
+  - 4
   layers:
   - Default
   - TransparentFX
